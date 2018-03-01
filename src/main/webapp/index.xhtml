@@ -21,7 +21,7 @@
                     <div class="form-group col-md-6">
                         <label for="inputCode">#{msg.product_code}</label>
                         <input type="text" class="form-control" id="inputCode"
-                               placeholder="#{msg.product_code}"></input>
+                               placeholder="#{msg.product_code}" value="#{productController.product.code}"></input>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputTypeProduct">#{msg.product_type}</label>
@@ -35,11 +35,12 @@
                     <div class="form-group col-md">
                         <label for="inputCostPrice">#{msg.product_costprice}</label>
                         <input type="text" class="form-control" id="inputCostPrice"
-                               placeholder="#{msg.product_costprice}"></input>
+                               placeholder="#{msg.product_costprice}"
+                               value="#{productController.product.costPrice}"></input>
                     </div>
                     <div class="form-group col-md">
                         <label for="inputSalePrice">#{msg.product_saleprice}</label>
-                        <input type="text" class="form-control" id="inputSalePrice"
+                        <input type="text" class="form-control" id="inputSalePrice" pattern="\(\d{2}\)\d{4}-\d{4}"
                                placeholder="#{msg.product_saleprice}"></input>
                     </div>
                     <div class="form-group col-md">

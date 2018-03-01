@@ -5,20 +5,28 @@ import br.com.storeadmin.model.Product;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import java.io.Serializable;
 
-@ManagedBean
+@ManagedBean(name = "productController")
 @RequestScoped
-public class ProductBean {
+public class ProductBean implements Serializable {
 
-    public Product product;
+    private Product product;
 
     private final String NAVIGATE_TO_HOME = "home";
 
     @PostConstruct
     public void init() {
-        product = new Product();
+        initProduct();
     }
 
+    public ProductBean() {
+        initProduct();
+    }
+
+    public void initProduct() {
+        product = new Product();
+    }
 
     public String insertProduct() {
         return NAVIGATE_TO_HOME;
@@ -32,5 +40,11 @@ public class ProductBean {
         return NAVIGATE_TO_HOME;
     }
 
+    public Product getProduct() {
+        return product;
+    }
 
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 }
