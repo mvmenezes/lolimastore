@@ -3,16 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a38a493d-72e9-467b-b40d-e462e7fe0e95" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br.com.storeadmin.i18n.Messages/Messages.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br.com.storeadmin.i18n.Messages/Messages_en.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br.com.storeadmin.i18n.Messages/Messages.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br.com.storeadmin.i18n.Messages/Messages_en.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/lolimastore-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/lolimastore-1.0-SNAPSHOT.war" />
-      <change beforePath="$PROJECT_DIR$/target/lolimastore-1.0-SNAPSHOT/WEB-INF/faces-config.xml" afterPath="$PROJECT_DIR$/target/lolimastore-1.0-SNAPSHOT/WEB-INF/faces-config.xml" />
-      <change beforePath="$PROJECT_DIR$/target/lolimastore-1.0-SNAPSHOT/index.xhtml" afterPath="$PROJECT_DIR$/target/lolimastore-1.0-SNAPSHOT/index.xhtml" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.xhtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="257">
-              <caret line="83" column="64" lean-forward="false" selection-start-line="83" selection-start-column="64" selection-end-line="83" selection-end-column="64" />
+              <caret line="92" column="64" lean-forward="false" selection-start-line="92" selection-start-column="64" selection-end-line="92" selection-end-column="64" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#h:body#0;n#h:html#0;n#!!top" expanded="true" />
               </folding>
@@ -445,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1518561643334</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Progredindo com Bootstrap/ Internacionalization Funcionando">
+      <created>1519782770879</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1519782770879</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -459,7 +456,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.50292826" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32911393" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -485,7 +482,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Agora vai" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agora vai" />
+    <MESSAGE value="Progredindo com Bootstrap/ Internacionalization Funcionando" />
+    <option name="LAST_COMMIT_MESSAGE" value="Progredindo com Bootstrap/ Internacionalization Funcionando" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -888,7 +886,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
-          <caret line="83" column="64" lean-forward="false" selection-start-line="83" selection-start-column="64" selection-end-line="83" selection-end-column="64" />
+          <caret line="92" column="64" lean-forward="false" selection-start-line="92" selection-start-column="64" selection-end-line="92" selection-end-column="64" />
           <folding>
             <element signature="n#style#0;n#div#0;n#h:body#0;n#h:html#0;n#!!top" expanded="true" />
           </folding>
