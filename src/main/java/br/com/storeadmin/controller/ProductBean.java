@@ -3,18 +3,19 @@ package br.com.storeadmin.controller;
 import br.com.storeadmin.model.Product;
 
 import javax.annotation.PostConstruct;
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
 import java.io.Serializable;
 
 @ManagedBean(name = "productController")
-@ViewScoped
+@RequestScoped
 public class ProductBean implements Serializable {
 
     private Product product;
 
-    private final String NAVIGATE_TO_HOME = "index?faces-redirect=true";
+    private final String NAVIGATE_TO_HOME = "index33.xhtml?faces-redirect=true";
 
     @PostConstruct
     public void init() {
@@ -29,8 +30,9 @@ public class ProductBean implements Serializable {
         product = new Product();
     }
 
-    public String insertProduct() {
-        return NAVIGATE_TO_HOME;
+    public void insertProduct()
+    {
+        int i = 0;
     }
 
     public String importProduct() {

@@ -11,6 +11,7 @@ public class Product {
     private int descount;
     private double salePrice;
     private int number;
+    private int quantity;
     private String color;
     private double size;
     private double weight;
@@ -20,6 +21,14 @@ public class Product {
 
     public int getId() {
         return id;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public void setId(int id) {

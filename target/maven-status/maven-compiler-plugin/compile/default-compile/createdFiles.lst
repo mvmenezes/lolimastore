@@ -1,12 +1,12 @@
 br\com\storeadmin\enummodel\EGender.class
-br\com\storeadmin\model\Retailer.class
-br\com\storeadmin\model\Customer.class
-br\com\storeadmin\model\Payment.class
-br\com\storeadmin\model\Product.class
 br\com\storeadmin\model\ProductType.class
 br\com\storeadmin\model\Sale.class
 br\com\storeadmin\model\Factory.class
+br\com\storeadmin\model\Retailer.class
+br\com\storeadmin\model\Customer.class
 br\com\storeadmin\controller\ProductBean.class
+br\com\storeadmin\model\Payment.class
 br\com\storeadmin\model\Provider.class
 br\com\storeadmin\model\Receipt.class
+br\com\storeadmin\model\Product.class
 br\com\storeadmin\model\Person.class

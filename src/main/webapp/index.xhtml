@@ -45,95 +45,101 @@
                         <input type="text" class="form-control" id="inputCode"
                                placeholder="#{msg.product_code}" value="#{productController.product.code}"></input>
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputTypeProduct">#{msg.product_type}</label>
-                        <select class="form-control" id="inputTypeProduct">
-                            <option>#{msg.product_type}</option>
-                            <option value="1">One</option>
-                            <option value="1">Two</option>
-                            <option value="1">Three</option>
-                            <option value="1">Four</option>
-                            <option value="1">Five</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md">
-                        <label for="inputCostPrice">#{msg.product_costprice}</label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">R$</span>
-                            </div>
-                            <input type="text" class="form-control money" id="inputCostPrice"
-                                   placeholder="#{msg.product_costprice}"
-                                   value="#{productController.product.costPrice}"></input>
-                        </div>
-                    </div>
-                    <div class="form-group col-md">
-                        <label for="inputSalePrice">#{msg.product_saleprice}</label>
-                        <input type="text" class="form-control money" id="inputSalePrice"
-                               placeholder="#{msg.product_saleprice}"
-                               value="#{productController.product.salePrice}" ></input>
-                    </div>
-                    <div class="form-group col-md">
-                        <label for="inputDescount">#{msg.product_descount}</label>
-                        <input type="text" class="form-control money" id="inputDescount"
-                               placeholder="#{msg.product_descount}"
-                               value="#{productController.product.descount}" ></input>
-                    </div>
-                </div>
+                                   <div class="form-group col-md-6">
+                                        <label for="inputTypeProduct">#{msg.product_type}</label>
+                                        <select class="form-control" id="inputTypeProduct">
+                                            <option>#{msg.product_type}</option>
+                                            <option value="1">One</option>
+                                            <option value="1">Two</option>
+                                            <option value="1">Three</option>
+                                            <option value="1">Four</option>
+                                            <option value="1">Five</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md">
+                                        <label for="inputCostPrice">#{msg.product_costprice}</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">R$</span>
+                                            </div>
+                                            <input type="text" class="form-control money" id="inputCostPrice"
+                                                   placeholder="#{msg.product_costprice}"
+                                                   value="#{productController.product.costPrice}"></input>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md">
+                                        <label for="inputSalePrice">#{msg.product_saleprice}</label>
+                                        <input type="text" class="form-control money" id="inputSalePrice"
+                                               placeholder="#{msg.product_saleprice}"
+                                               value="#{productController.product.salePrice}" ></input>
+                                    </div>
+                                    <div class="form-group col-md">
+                                        <label for="inputDescount">#{msg.product_descount}</label>
+                                        <input type="text" class="form-control money" id="inputDescount"
+                                               placeholder="#{msg.product_descount}"
+                                               value="#{productController.product.descount}" ></input>
+                                    </div>
+                                    <div class="form-group col-md">
+                                        <label for="inputDescount">#{msg.product_quantity}</label>
+                                        <input type="text" class="form-control number" id="quantity"
+                                               placeholder="#{msg.product_quantity}" size="4"
+                                               value="#{productController.product.quantity}" ></input>
+                                    </div>
+                                </div>
 
-                <div class="form-row">
-                    <div class="form-group col-md">
-                        <label for="inputNumber">#{msg.product_number}</label>
-                        <input type="text" size="5" class="form-control  number" id="inputNumber"
-                               placeholder="#{msg.product_number}"
-                               value="#{productController.product.number}"></input>
-                    </div>
-                    <div class="form-group col-md">
-                        <label for="inputSize">#{msg.product_size}</label>
-                        <input type="text" class="form-control size" id="inputSize"
-                               placeholder="#{msg.product_size}"
-                               value="#{productController.product.size}"></input>
-                    </div>
-                    <div class="form-group col-md">
-                        <label for="inputWeight">#{msg.product_weight}</label>
-                        <input type="text" class="form-control size" id="inputWeight"
-                               placeholder="#{msg.product_weight}"
-                               value="#{productController.product.weight}"></input>
-                    </div>
-                    <div class="form-group col-md">
-                        <label for="inputColor">#{msg.product_color}</label>
-                        <input type="text" class="form-control" id="inputColor"
-                               placeholder="#{msg.product_color}"
-                               value="#{productController.product.color}"></input>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md">
-                        <label for="inputNumber">#{msg.product_description}</label>
-                        <textarea class="form-control" id="inputDescription"
-                                  placeholder="#{msg.product_description}"
-                                  value="#{productController.product.description}"></textarea>
-                    </div>
-                    <div class="form-group col-md">
-                        <label for="inputTags">#{msg.product_tag}</label>
-                        <textarea class="form-control" id="inputTags" placeholder="#{msg.product_tag}"
-                                  value="#{productController.product.tag}"></textarea>
-                    </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md">
+                                        <label for="inputNumber">#{msg.product_number}</label>
+                                        <input type="text" size="5" class="form-control  number" id="inputNumber"
+                                               placeholder="#{msg.product_number}"
+                                               value="#{productController.product.number}"></input>
+                                    </div>
+                                    <div class="form-group col-md">
+                                        <label for="inputSize">#{msg.product_size}</label>
+                                        <input type="text" class="form-control size" id="inputSize"
+                                               placeholder="#{msg.product_size}"
+                                               value="#{productController.product.size}"></input>
+                                    </div>
+                                    <div class="form-group col-md">
+                                        <label for="inputWeight">#{msg.product_weight}</label>
+                                        <input type="text" class="form-control size" id="inputWeight"
+                                               placeholder="#{msg.product_weight}"
+                                               value="#{productController.product.weight}"></input>
+                                    </div>
+                                    <div class="form-group col-md">
+                                        <label for="inputColor">#{msg.product_color}</label>
+                                        <input type="text" class="form-control" id="inputColor"
+                                               placeholder="#{msg.product_color}"
+                                               value="#{productController.product.color}"></input>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md">
+                                        <label for="inputNumber">#{msg.product_description}</label>
+                                        <textarea class="form-control" id="inputDescription"
+                                                  placeholder="#{msg.product_description}"
+                                                  value="#{productController.product.description}"></textarea>
+                                    </div>
+                                    <div class="form-group col-md">
+                                        <label for="inputTags">#{msg.product_tag}</label>
+                                        <textarea class="form-control" id="inputTags" placeholder="#{msg.product_tag}"
+                                                  value="#{productController.product.tag}"></textarea>
+                                    </div>
 
-                </div>
+                                </div>
 
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label class="custom-file-label" for="inputGroupFile01">#{msg.product_images}</label>
-                        <input type="file" class="form-control" id="inputGroupFile01"></input>
-                    </div>
-                    <div class="form-group col-md-1">
-                        <label class="custom-file-label" for="inputGroupFile01">gg</label>
-                        <button class="btn btn-primary">Upload</button>
-                    </div>
-                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label class="custom-file-label" for="inputGroupFile01">#{msg.product_images}</label>
+                                        <input type="file" class="form-control" id="inputGroupFile01"></input>
+                                    </div>
+                                    <div class="form-group col-md-1">
+                                        <label class="custom-file-label" for="inputGroupFile01">gg</label>
+                                        <button class="btn btn-primary">Upload</button>
+                                    </div>
+                                </div>
 
                 <h:commandButton class="btn btn-primary" value="Inserir" action="#{productController.insertProduct()}"></h:commandButton>
             </h:form>
