@@ -5,15 +5,16 @@ import br.com.storeadmin.model.Product;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 import java.io.Serializable;
 
 @ManagedBean(name = "productController")
-@RequestScoped
+@ViewScoped
 public class ProductBean implements Serializable {
 
     private Product product;
 
-    private final String NAVIGATE_TO_HOME = "home";
+    private final String NAVIGATE_TO_HOME = "index?faces-redirect=true";
 
     @PostConstruct
     public void init() {
