@@ -1,19 +1,121 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:jsf="http://xmlns.jcp.org/jsf">
+<!DOCTYPE html>
+<h:html lang="pt-br"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:jsf="http://xmlns.jcp.org/jsf"
+        xmlns:p="http://primefaces.org/ui">
 <h:head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" type="text/css"
-          href="#{request.contextPath}/resources/bootstrap/css/bootstrap.min.css"/>
-    <title>Minha primeira aplicação com JSF</title>
+
 </h:head>
-<h:body>
-    <h:outputText value="Ola mundo!"/>
+<h:body  onload="StartFunction()" >
+    <p:outputPanel>
+        <div class="ui-grid ui-fluid">
+    <h:form>
+        <p:panelGrid columns="2" columnClasses="ui-grid-col-6 _50,ui-grid-col-6 _50"  layout="grid" styleClass="ui-panelgrid-blank">
+                    
+            <p:outputLabel for="inputCode" value="#{msg.product_code}">
+                <p:inputText type="text" class="form-control" id="inputCode"
+                               placeholder="#{msg.product_code}" value="#{productController.product.code}"></p:inputText>
+            </p:outputLabel>
+            <p:outputLabel for="inputTypeProduct" value="#{msg.product_type}">
+                <p:selectOneMenu id="inputTypeProduct" value="#{productController.types}"
+                            var="t"  filter="true" filterMatchMode="startsWith" style="width:200px">
+                    <f:selectItems value="#{productController.product.types}" var="type" itemValue="#{type.description}"  />
+
+                    <p:column>
+                        <h:outputText />
+                    </p:column>
+                </p:selectOneMenu>
+            </p:outputLabel>
+
+        </p:panelGrid>
+        <p:panelGrid columns="4"  columnClasses="ui-grid-col-3 _50,ui-grid-col-3 _50,ui-grid-col-3 _50,ui-grid-col-3 _50" layout="grid" styleClass="ui-panelgrid-blank">
+
+        <p:outputLabel for="inputCostPrice" value="#{msg.product_costprice}">
+                            <p:inputText type="text"  id="inputCostPrice"
+                                   placeholder="#{msg.product_costprice}"
+                                   value="#{productController.product.costPrice}" style="width:100px"></p:inputText>
+                    </p:outputLabel>
+                    <p:outputLabel for="inputSalePrice" value="#{msg.product_saleprice}">
+                        <p:inputText type="text" id="inputSalePrice"
+                               placeholder="#{msg.product_saleprice}"
+                               value="#{productController.product.salePrice}" style="width:100px" ></p:inputText>
+                    </p:outputLabel>
+            
+                    <p:outputLabel for="inputDescount" value="#{msg.product_descount}">
+                        <p:inputText type="text"  id="inputDescount"
+                               placeholder="#{msg.product_descount}"
+                               value="#{productController.product.descount}" style="width:100px"></p:inputText>
+                    </p:outputLabel>
+
+            <p:outputLabel for="inputDescount" value="#{msg.product_quantity}">
+                <p:inputText type="text" id="quantity"
+                             placeholder="#{msg.product_quantity}" size="4"
+                             value="#{productController.product.quantity}" style="width:100px"></p:inputText>
+            </p:outputLabel>
+            <p:outputLabel for="inputMinQuantity" value="#{msg.product_min_quantity}">
+                <p:inputText type="text" id="inputMinQuantity"
+                             placeholder="#{msg.product_min_quantity}" size="4"
+                             value="#{productController.product.minquantity}" style="width:100px"></p:inputText>
+            </p:outputLabel>
+
+        </p:panelGrid>
+        <p:panelGrid columns="4"  columnClasses="ui-grid-col-3 _50,ui-grid-col-3 _50,ui-grid-col-3 _50,ui-grid-col-3 _50" layout="grid" styleClass="ui-panelgrid-blank">
+
+        <p:outputLabel for="inputNumber" value="#{msg.product_number}">
+                        <p:inputText type="text" size="5" class="form-control  number" id="inputNumber"
+                               placeholder="#{msg.product_number}"
+                               value="#{productController.product.number}" style="width:100px"></p:inputText>
+                    </p:outputLabel>
+            
+                    <p:outputLabel for="inputSize" value="#{msg.product_size}">
+                    <p:inputText type="text" class="form-control size" id="inputSize"
+                           placeholder="#{msg.product_size}"
+                           value="#{productController.product.size}" style="width:100px"></p:inputText>
+                    </p:outputLabel>
+
+            <p:outputLabel for="inputGrossWeight" value="#{msg.product_grossWeight}">
+            <p:inputText type="text" class="form-control size" id="inputGrossWeight"
+                         placeholder="#{msg.product_grossWeight}"
+                         value="#{productController.product.grossWeight}" style="width:100px"></p:inputText>
+            </p:outputLabel>
+
+            <p:outputLabel for="inputNetWeight" value="#{msg.product_netWeight}">
+                <p:inputText type="text" class="form-control size" id="inputNetWeight"
+                             placeholder="#{msg.product_netWeight}"
+                             value="#{productController.product.netWeight}" style="width:100px"></p:inputText>
+            </p:outputLabel>
+            
+                    <p:outputLabel for="inputColor" value="#{msg.product_color}">
+                        <p:inputText type="text" class="form-control" id="inputColor"
+                               placeholder="#{msg.product_color}"
+                               value="#{productController.product.color}" style="width:100px"></p:inputText>
+                    </p:outputLabel>
+
+        </p:panelGrid>
+        <p:panelGrid columns="2" layout="grid" styleClass="ui-panelgrid-blank">
+
+        <p:outputLabel for="inputDescription" value="#{msg.product_description}">
+                        <p:inputTextarea rows="2" cols="50" maxlength="150" id="inputDescription" placeholder="#{msg.product_description}" value="#{productController.product.description}" counterTemplate="{0} characters remaining." autoResize="false"/>
+                    </p:outputLabel>
+            
+                    <p:outputLabel for="inputTags" value="#{msg.product_tag}">
+                        <p:chips id="inputTags"  placeholder="#{msg.product_tag}"/>
+                    </p:outputLabel>
+        </p:panelGrid>
+        <p:outputLabel  for="inputFileImages" value="#{msg.product_images}"></p:outputLabel><br/>
+            <p:fileUpload value="#{fileUploadView.file}" id="inputFileImages" mode="simple" skinSimple="true"/>
+
+        <br/>
+        <h:commandButton  value="Inserir" action="#{productController.insertProduct()}"></h:commandButton>
+
+    </h:form>
+    </div>
+    </p:outputPanel>
 </h:body>
-</html>
+</h:html>

@@ -1,14 +1,22 @@
 package br.com.storeadmin.model;
 
 public class Person {
+
+    private long id;
     private String name;
     private String cpf;
     private String gender;
-    private int age;
     private String email;
     private String mobileNumber;
     private String telNumber;
     private String secondNumber;
+    private String instagram;
+    private String facebook;
+    private String note;
+
+    private String code;
+
+
 
     public String getName() {
         return name;
@@ -34,13 +42,6 @@ public class Person {
         this.gender = gender;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public String getEmail() {
         return email;
@@ -72,5 +73,45 @@ public class Person {
 
     public void setTelNumber(String telNumber) {
         this.telNumber = telNumber;
+    }
+
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
+    }
+
+    public void setInstagram(String instagram) {
+        this.instagram = instagram;
+    }
+
+    public String getFacebook() {
+        return facebook;
+    }
+
+    public String getInstagram() {
+        return instagram;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }

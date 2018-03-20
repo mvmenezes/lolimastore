@@ -1,19 +1,22 @@
 package br.com.storeadmin.controller;
 
+import br.com.storeadmin.dao.ProductTypeDAO;
 import br.com.storeadmin.model.Product;
+import br.com.storeadmin.model.ProductType;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @ManagedBean(name = "productController")
-@RequestScoped
+@SessionScoped
 public class ProductBean implements Serializable {
 
     private Product product;
+    private ProductTypeDAO dao;
+    private List<ProductType> types;
 
     private final String NAVIGATE_TO_HOME = "index33.xhtml?faces-redirect=true";
 
@@ -26,8 +29,11 @@ public class ProductBean implements Serializable {
         initProduct();
     }
 
-    public void initProduct() {
+    public void initProduct()
+    {
         product = new Product();
+        types = new ArrayList<ProductType>();
+        dao = new ProductTypeDAO();
     }
 
     public void insertProduct()
@@ -49,5 +55,10 @@ public class ProductBean implements Serializable {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public void refreshProductType()
+    {
+        types = dao.findAll();
     }
 }

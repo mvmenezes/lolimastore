@@ -4,149 +4,60 @@
         xmlns="http://www.w3.org/1999/xhtml"
         xmlns:h="http://java.sun.com/jsf/html"
         xmlns:f="http://java.sun.com/jsf/core"
-        xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
-        xmlns:jsf="http://xmlns.jcp.org/jsf">
+        xmlns:jsf="http://xmlns.jcp.org/jsf"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
-        <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
-        <title>Add Products</title>
-        <script>
-        function StartFunction()
-        {
-            $('.date').mask('00/00/0000');
-            $('.time').mask('00:00:00');
-            $('.date_time').mask('00/00/0000 00:00:00');
-            $('.cep').mask('00000-000');
-            $('.phone').mask('0000-0000');
-            $('.phone_with_ddd').mask('(00) 0000-0000');
-            $('.phone_us').mask('(000) 000-0000');
-            $('.mixed').mask('AAA 000-S0S');
-            $('.cpf').mask('000.000.000-00', {reverse: true});
-            $('.cnpj').mask('00.000.000/0000-00', {reverse: true});
-            $('.money').mask('000.000.000.000.000,00', {reverse: true});
-            $('.size').mask('000,00', {reverse: true});
-            $('.money2').mask("#.##0,00", {reverse: true});
-            $('.number').mask("00000000000", {reverse: true});
-            // Limpando os campos
-            $(":input").val("");
-        }
-    </script>
-
     </h:head>
-    <h:body  onload="StartFunction()" >
-        <div id="divOut" style="margin: 40px" jsf:id="divOut">
-            <h:form  enctype="multipart/form-data">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputCode">#{msg.product_code}</label>
-                        <input type="text" class="form-control" id="inputCode"
-                               placeholder="#{msg.product_code}" value="#{productController.product.code}"></input>
-                    </div>
-                                   <div class="form-group col-md-6">
-                                        <label for="inputTypeProduct">#{msg.product_type}</label>
-                                        <select class="form-control" id="inputTypeProduct">
-                                            <option>#{msg.product_type}</option>
-                                            <option value="1">One</option>
-                                            <option value="1">Two</option>
-                                            <option value="1">Three</option>
-                                            <option value="1">Four</option>
-                                            <option value="1">Five</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="inputCostPrice">#{msg.product_costprice}</label>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1">R$</span>
-                                            </div>
-                                            <input type="text" class="form-control money" id="inputCostPrice"
-                                                   placeholder="#{msg.product_costprice}"
-                                                   value="#{productController.product.costPrice}"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="inputSalePrice">#{msg.product_saleprice}</label>
-                                        <input type="text" class="form-control money" id="inputSalePrice"
-                                               placeholder="#{msg.product_saleprice}"
-                                               value="#{productController.product.salePrice}" ></input>
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="inputDescount">#{msg.product_descount}</label>
-                                        <input type="text" class="form-control money" id="inputDescount"
-                                               placeholder="#{msg.product_descount}"
-                                               value="#{productController.product.descount}" ></input>
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="inputDescount">#{msg.product_quantity}</label>
-                                        <input type="text" class="form-control number" id="quantity"
-                                               placeholder="#{msg.product_quantity}" size="4"
-                                               value="#{productController.product.quantity}" ></input>
-                                    </div>
-                                </div>
+    <h:body>
+        <p:outputPanel>
+            <p:outputPanel>
+                <h:form>
+                        <p:growl id="messages"/>
+                        <p:menubar>
+                            <p:submenu label="Cadastro" icon="fa-plus-circle">
+                                <p:menuitem value="Cliente"  actionListener="#{menuBean.setRegCustomer}" ajax="true" update="content" />
+                                <p:menuitem value="Fornecedor" url="#" />
+                                <p:menuitem value="Vendedor" url="#" />
+                                <p:menuitem value="Produto"   actionListener="#{menuBean.setRegProduct}" ajax="true" update="content" />
+                            </p:submenu>
 
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="inputNumber">#{msg.product_number}</label>
-                                        <input type="text" size="5" class="form-control  number" id="inputNumber"
-                                               placeholder="#{msg.product_number}"
-                                               value="#{productController.product.number}"></input>
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="inputSize">#{msg.product_size}</label>
-                                        <input type="text" class="form-control size" id="inputSize"
-                                               placeholder="#{msg.product_size}"
-                                               value="#{productController.product.size}"></input>
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="inputWeight">#{msg.product_weight}</label>
-                                        <input type="text" class="form-control size" id="inputWeight"
-                                               placeholder="#{msg.product_weight}"
-                                               value="#{productController.product.weight}"></input>
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="inputColor">#{msg.product_color}</label>
-                                        <input type="text" class="form-control" id="inputColor"
-                                               placeholder="#{msg.product_color}"
-                                               value="#{productController.product.color}"></input>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="inputNumber">#{msg.product_description}</label>
-                                        <textarea class="form-control" id="inputDescription"
-                                                  placeholder="#{msg.product_description}"
-                                                  value="#{productController.product.description}"></textarea>
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="inputTags">#{msg.product_tag}</label>
-                                        <textarea class="form-control" id="inputTags" placeholder="#{msg.product_tag}"
-                                                  value="#{productController.product.tag}"></textarea>
-                                    </div>
+                            <p:submenu label="Venda" icon="ui-icon-pencil">
+                                <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+                                <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+                            </p:submenu>
 
-                                </div>
+                            <p:submenu label="Compra" icon="ui-icon-help">
+                                <p:menuitem value="Contents" url="#" />
+                                <p:submenu label="Search" icon="ui-icon-search">
+                                    <p:submenu label="Text">
+                                        <p:menuitem value="Workspace" url="#" />
+                                    </p:submenu>
+                                    <p:menuitem value="File" url="#" />
+                                </p:submenu>
+                            </p:submenu>
 
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label class="custom-file-label" for="inputGroupFile01">#{msg.product_images}</label>
-                                        <input type="file" class="form-control" id="inputGroupFile01"></input>
-                                    </div>
-                                    <div class="form-group col-md-1">
-                                        <label class="custom-file-label" for="inputGroupFile01">gg</label>
-                                        <button class="btn btn-primary">Upload</button>
-                                    </div>
-                                </div>
+                            <p:submenu label="Relatório" icon="ui-icon-gear">
+                                <p:submenu label="Ajax" icon="ui-icon-refresh">
+                                    <p:menuitem value="Save" actionListener="#{menuView.save}" icon="ui-icon-disk" update="messages"/>
+                                    <p:menuitem value="Update" actionListener="#{menuView.update}" icon="ui-icon-arrowrefresh-1-w" update="messages"/>
+                                </p:submenu>
+                                <p:submenu label="Non-Ajax" icon="ui-icon-newwin">
+                                    <p:menuitem value="Delete" actionListener="#{menuView.delete}" icon="ui-icon-close" update="messages" ajax="false"/>
+                                </p:submenu>
+                            </p:submenu>
 
-                <h:commandButton class="btn btn-primary" value="Inserir" action="#{productController.insertProduct()}"></h:commandButton>
-            </h:form>
-        </div>
-        <h:outputScript name="js/jquery-3.2.1.min.js"/>
-        <h:outputScript name="js/popper.min.js"/>
-        <h:outputScript name="bootstrap/js/bootstrap.min.js"/>
-        <h:outputScript name="js/jquery.mask.min.js"/>
+                            <p:menuitem value="Ajuda" url="http://www.primefaces.org" icon="ui-icon-close" />
+                            <f:facet name="options">
+                                <p:inputText style="margin-right:10px" placeholder="Search"/>
+                                <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />
+                            </f:facet>
+                        </p:menubar>
+                </h:form>
+            </p:outputPanel>
+            <p:outputPanel id="content">
+                <ui:include src="#{menuBean.page}.xhtml"/>
+            </p:outputPanel>
+        </p:outputPanel>
     </h:body>
 </h:html>

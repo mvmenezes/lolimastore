@@ -1,23 +1,60 @@
 package br.com.storeadmin.model;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
-public class Product {
 
+@Entity
+@Table(name="PRODUCT")
+@NamedQuery(name="Product.findAll", query="SELECT a FROM Product a")
+public class Product implements Serializable{
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name="PRD_ID")
     private int id;
+    @Column(name="PRD_CODE")
     private String code;
+    @Column(name="PRD_DESCRIPTION")
     private String description;
+    @Column(name="PRD_COST_PRICE")
     private double costPrice;
+    @Column(name="PRD_DESCOUNT")
     private int descount;
+    @Column(name="PRD_SALE_PRICE")
     private double salePrice;
+    @Column(name="PRD_NUMBER")
     private int number;
+    @Column(name="PRD_QTY")
     private int quantity;
+    @Column(name="PRD_COLOR")
     private String color;
+    @Column(name="PRD_SIZE")
     private double size;
-    private double weight;
+    @Column(name="PRD_GROSS_WEIGHT")
+    private double grossWeight;
+    @Column(name="PRD_NET_WEIGHT")
+    private double netWeight;
+    @Column(name="PRD_TYPE")
     private ProductType type;
+    @Column(name="PRD_TAG")
     private List<String> tag;
+    @Column(name="PRD_IMAGE")
     private List<String> images;
+    @Column(name="PRD_ADDITIONAL")
+    private String additional;
+    @Column(name="PRD_MIN_QTY")
+    private int minquantity;
+    @Column(name="PRD_COMISSION")
+    private double comission;
+    @Column(name="FCT_ID")
+    private Factory factory;
+    @Column(name="")
+    private Person responsable;
+    @Column(name="PRD_BAR_CODE")
+    private String barcode;
+
 
     public int getId() {
         return id;
@@ -99,14 +136,6 @@ public class Product {
         this.size = size;
     }
 
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
     public ProductType getType() {
         return type;
     }
@@ -129,5 +158,69 @@ public class Product {
 
     public void setImages(List<String> images) {
         this.images = images;
+    }
+
+    public double getGrossWeight() {
+        return grossWeight;
+    }
+
+    public double getNetWeight() {
+        return netWeight;
+    }
+
+    public Factory getFactory() {
+        return factory;
+    }
+
+    public double getComission() {
+        return comission;
+    }
+
+    public int getMinquantity() {
+        return minquantity;
+    }
+
+    public Person getResponsable() {
+        return responsable;
+    }
+
+    public String getAdditional() {
+        return additional;
+    }
+
+    public String getBarcode() {
+        return barcode;
+    }
+
+    public void setAdditional(String aditional) {
+        this.additional = aditional;
+    }
+
+    public void setGrossWeight(double grossWeight) {
+        this.grossWeight = grossWeight;
+    }
+
+    public void setNetWeight(double netWeight) {
+        this.netWeight = netWeight;
+    }
+
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
+    }
+
+    public void setComission(double comission) {
+        this.comission = comission;
+    }
+
+    public void setMinquantity(int minquantity) {
+        this.minquantity = minquantity;
+    }
+
+    public void setFactory(Factory factory) {
+        this.factory = factory;
+    }
+
+    public void setResponsable(Person responsable) {
+        this.responsable = responsable;
     }
 }

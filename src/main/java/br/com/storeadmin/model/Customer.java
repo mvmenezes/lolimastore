@@ -1,6 +1,17 @@
 package br.com.storeadmin.model;
 
-public class Customer extends Person {
+import java.io.Serializable;
+import java.util.Date;
 
+public class Customer extends Person implements Serializable {
 
+    private Date birthDate;
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
 }
