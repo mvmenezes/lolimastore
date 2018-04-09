@@ -10,15 +10,12 @@ import javax.persistence.spi.PersistenceUnitInfo;
 
 public class JPAUtil {
 
-    @PersistenceUnit(
-            unitName = "storeadmin"
-
-    )
 	public EntityManagerFactory factory;
 	
 	private static JPAUtil instance;
 	
-	private JPAUtil() {
+	private JPAUtil()
+	{
 
 		try
 		{

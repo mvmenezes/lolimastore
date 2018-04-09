@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<h:html lang="pt-br"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:jsf="http://xmlns.jcp.org/jsf"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+    </h:head>
+    <h:body>
+        <div class="ui-fluid">
+        <ui:composition>
+            <p:outputLabel for="inputTypeCustomer" value="Tipo de Cliente">
+                <p:selectOneRadio id="inputTypeCustomer" value="#{bean.customer.type}"
+                                   valueChangeListener="#{customerBean.onChangePerson}"
+                        update="gridPersonales">
+                    <p:ajax event="change" update="gridPersonales" render="gridPersonales" />
+                    <f:selectItem itemValue="F" group="groupOne" selected="true" itemLabel="Física" ></f:selectItem>
+                    <f:selectItem itemValue="J" group="groupOne" itemLabel="Jurídica" ></f:selectItem>
+                </p:selectOneRadio>
+            </p:outputLabel>
+                <p:panelGrid columns="3" id="gridPersonales" columnClasses="ui-grid-col-6,ui-grid-col-4,ui-grid-col-2" layout="grid" styleClass="ui-panelgrid-blank">
+                    <p:outputLabel for="inputName" value="#{msg.person_name}">
+                        <p:inputText id="inputName" value="#{bean.customer.name}" placeholder="#{msg.person_name}"></p:inputText>
+                    </p:outputLabel>
+                    <p:outputPanel id="panelDocumentCPF" rendered="#{bean.company == false}">
+                        <p:outputLabel for="inputCPF" value="#{msg.person_cpf}" >
+                            <p:inputMask mask="999.999.999-99"  id="inputCPF" value="#{bean.customer.cpf}"  placeholder="#{msg.person_cpf}"></p:inputMask>
+                        </p:outputLabel>
+                    </p:outputPanel>
+                    <p:outputPanel id="panelDocumentCNPJ" rendered="#{bean.company == true}">
+                        <p:outputLabel for="inputCNPJ" value="CNPJ" >
+                            <p:inputMask mask="99.999.999/9999-99" id="inputCNPJ" value="#{bean.customer.CNPJ}"  placeholder="CNPJ"></p:inputMask>
+                        </p:outputLabel>
+                    </p:outputPanel>
+                    <p:outputLabel for="inputCode" value="#{msg.person_code}">
+                        <p:inputMask id="inputCode" value="#{bean.customer.code}" placeholder="#{msg.person_code}"></p:inputMask>
+                    </p:outputLabel>
+                    <p:outputLabel for="inputEmail" value="#{msg.person_email}">
+                        <p:inputText id="inputEmail" value="#{bean.customer.email}"  placeholder="#{msg.person_email}"></p:inputText>
+                    </p:outputLabel>
+                    <p:outputLabel for="inputGender" value="#{msg.person_gender}">
+                        <p:selectOneRadio id="inputGender" value="#{bean.customer.gender}" >
+                            <f:selectItem itemValue="F" itemLabel="#{msg.person_gender_fem}" ></f:selectItem>
+                            <f:selectItem itemValue="M" itemLabel="#{msg.person_gender_masc}" ></f:selectItem>
+                        </p:selectOneRadio>
+                    </p:outputLabel>
+                    <p:outputLabel for="inputBirth" value="#{msg.person_birthdate}">
+                        <p:inputMask mask="99/99/9999" id="inputBirth" value="#{bean.customer.birthDate}" placeholder="#{msg.person_age}"></p:inputMask>
+                    </p:outputLabel>
+                </p:panelGrid>
+                <p:panelGrid columns="4" layout="grid" styleClass="ui-panelgrid-blank">
+
+                    <p:outputLabel for="inputFacebook" value="#{msg.person_facebook_account}">
+                        <p:inputText id="inputFacebook" value="#{bean.customer.facebook}"  placeholder="#{msg.person_facebook_account}"></p:inputText>
+                    </p:outputLabel>
+                    <p:outputLabel for="inputInstagram" value="#{msg.person_instagram_account}">
+                        <p:inputText id="inputInstagram" value="#{bean.customer.instagram}"  placeholder="#{msg.person_instagram_account}"></p:inputText>
+                    </p:outputLabel>
+                </p:panelGrid>
+
+                <p:outputLabel for="inputNote">#{msg.person_note}</p:outputLabel>
+                <p:inputText id="inputNote" value="#{bean.customer.note}"  placeholder="#{msg.person_note}"></p:inputText>
+
+
+                <h:outputText id="output" value="#{bean.customer.note}" />
+            <!--/h:form-->
+        </ui:composition>
+        </div>
+
+    </h:body>
+</h:html>

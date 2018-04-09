@@ -25,7 +25,7 @@
             <p:outputLabel for="inputTypeProduct" value="#{msg.product_type}">
                 <p:selectOneMenu id="inputTypeProduct" value="#{productController.types}"
                             var="t"  filter="true" filterMatchMode="startsWith" style="width:200px">
-                    <f:selectItems value="#{productController.product.types}" var="type" itemValue="#{type.description}"  />
+                    <f:selectItems value="#{productController.product.type}" var="type" itemValue="#{type.description}"  />
 
                     <p:column>
                         <h:outputText />

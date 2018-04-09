@@ -16,4 +16,7 @@
             <var>msg</var>
         </resource-bundle>
     </application>
+    <lifecycle>
+        <phase-listener>br.com.storeadmin.model.Common.LifeCycleListener</phase-listener>
+    </lifecycle>
 </faces-config>

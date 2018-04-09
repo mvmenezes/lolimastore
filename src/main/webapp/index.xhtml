@@ -11,9 +11,12 @@
     </h:head>
     <h:body>
         <p:outputPanel>
+            <p:outputPanel background-color="blue" height="30px">
+
+            </p:outputPanel>
             <p:outputPanel>
-                <h:form>
-                        <p:growl id="messages"/>
+                <h:form id="formIndex">
+                        <p:growl for="GrowMessage"/>
                         <p:menubar>
                             <p:submenu label="Cadastro" icon="fa-plus-circle">
                                 <p:menuitem value="Cliente"  actionListener="#{menuBean.setRegCustomer}" ajax="true" update="content" />
@@ -22,9 +25,10 @@
                                 <p:menuitem value="Produto"   actionListener="#{menuBean.setRegProduct}" ajax="true" update="content" />
                             </p:submenu>
 
-                            <p:submenu label="Venda" icon="ui-icon-pencil">
-                                <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
-                                <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+                            <p:submenu label="Contas" icon="ui-icon-pencil">
+                                <p:menuitem value="Contas a Receber"  icon="ui-icon-arrowreturnthick-1-w" actionListener="#{menuBean.setRAdress}"  ajax="true" update="content" />
+                                <p:menuitem value="Contas a Pagar" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+                                <p:menuitem value="Consultar contas" url="#" icon="ui-icon-arrowreturnthick-1-e" />
                             </p:submenu>
 
                             <p:submenu label="Compra" icon="ui-icon-help">
@@ -37,13 +41,13 @@
                                 </p:submenu>
                             </p:submenu>
 
-                            <p:submenu label="Relatório" icon="ui-icon-gear">
-                                <p:submenu label="Ajax" icon="ui-icon-refresh">
-                                    <p:menuitem value="Save" actionListener="#{menuView.save}" icon="ui-icon-disk" update="messages"/>
-                                    <p:menuitem value="Update" actionListener="#{menuView.update}" icon="ui-icon-arrowrefresh-1-w" update="messages"/>
+                            <p:submenu label="Configuração" icon="ui-icon-gear">
+                                <p:submenu label="Alertas" icon="ui-icon-refresh">
+                                    <p:menuitem value="Save" actionListener="#{menuView.save}" icon="ui-icon-disk" />
+                                    <p:menuitem value="Update" actionListener="#{menuView.update}" icon="ui-icon-arrowrefresh-1-w" />
                                 </p:submenu>
                                 <p:submenu label="Non-Ajax" icon="ui-icon-newwin">
-                                    <p:menuitem value="Delete" actionListener="#{menuView.delete}" icon="ui-icon-close" update="messages" ajax="false"/>
+                                    <p:menuitem value="Delete" actionListener="#{menuView.delete}" icon="ui-icon-close"  ajax="false"/>
                                 </p:submenu>
                             </p:submenu>
 

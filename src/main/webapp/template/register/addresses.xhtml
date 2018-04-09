@@ -1,0 +1,187 @@
+<ui:composition lang="pt-br"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:jsf="http://xmlns.jcp.org/jsf"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+    <p:outputPanel id="panelContent">
+            <div class="ui-fluid" jsf:id="divResp" id="divResp">
+                    <p:outputPanel id="panelForm">
+                        <p:messages for="msgAddress" showSummary="false"  showDetail="true" closable="true"/>
+                        <p:panelGrid columns="4" id="gridForm" columnClasses="ui-grid-col-3,ui-grid-col-5,ui-grid-col-4" layout="grid" styleClass="ui-panelgrid-blank">
+
+                            <p:outputPanel>
+                            <p:outputLabel for="inputType" value="Tipo de Endereço">
+                                <p:selectOneMenu id="inputType" value="#{bean.typeAddressID}" panelStyle="width:120px"
+                                                     var="t" style="width:150px" filter="true" filterMatchMode="startsWith">
+                                        <f:selectItems value="#{bean.addressTypeList}" var="ad" itemLabel="#{ad.name}" itemValue="#{ad.id}" />
+
+                                        <p:column>
+                                            <h:outputText value="#{t.name}" />
+                                        </p:column>
+                                    </p:selectOneMenu>
+                                </p:outputLabel>
+                                <!-- p:graphicImage name="imagens/if_sign-add_299068.png"  style="margin-top:10px;margin-left:5px;"></p:graphicImage -->
+                            </p:outputPanel>
+
+                            <p:outputPanel>
+                                <p:outputLabel for="inputZipCode" value="CEP">
+                                    <p:inputMask id="inputZipCode" value="#{bean.address.zipcode}" style="width:100px;" mask="99999-999" placeholder="Digite o CEP"></p:inputMask>
+                                </p:outputLabel>
+                                <p:commandButton type="submit" id="btSearchZipCode"  value="Buscar CEP"  form="mainForm" actionListener="#{bean.searchZipCode}" update="mainForm" style="margin-top:15px;margin-left:5px;width:120px;"></p:commandButton>
+                            </p:outputPanel>
+                            <p:messages for="msgSearchZipCode" showSummary="false"  showDetail="true" closable="true"/>
+
+                        </p:panelGrid>
+                        <p:panelGrid columns="4" columnClasses="ui-grid-col-3,ui-grid-col-3,ui-grid-col-3,ui-grid-col-3" layout="grid" styleClass="ui-panelgrid-blank">
+
+                            <p:outputLabel for="inputStreet" value="Logradouro">
+                                <p:inputMask id="inputStreet" value="#{bean.address.street}"  placeholder="Digite o endereço"></p:inputMask>
+                            </p:outputLabel>
+                            <p:outputLabel for="inputNumber" value="Número">
+                                <p:inputMask id="inputNumber" value="#{bean.address.number}"  placeholder="Digite o endereço"></p:inputMask>
+                            </p:outputLabel>
+                            <p:outputLabel for="inputDistrict" value="Bairro">
+                                <p:inputMask id="inputDistrict" value="#{bean.address.district}"  placeholder="Digite o Bairro"></p:inputMask>
+                            </p:outputLabel>
+                            <p:outputLabel for="inputAdditional" value="Complemento">
+                                <p:inputMask id="inputAdditional" value="#{bean.address.additional}"  placeholder="Digite algum complemento"></p:inputMask>
+                            </p:outputLabel>
+                        </p:panelGrid>
+                        <p:panelGrid columns="4"  columnClasses="ui-grid-col-3,ui-grid-col-3,ui-grid-col-3" layout="grid" styleClass="ui-panelgrid-blank">
+
+                            <p:outputLabel for="inputCity" value="Cidade">
+                                <p:inputMask id="inputCity" value="#{bean.address.city}"  placeholder="Digite a Cidade"></p:inputMask>
+                            </p:outputLabel>
+                            <p:outputLabel for="inputEstado" value="Estado">
+                                <p:inputMask id="inputEstado" value="#{bean.address.state}"  placeholder="Digite o Estado"></p:inputMask>
+                            </p:outputLabel>
+                            <p:outputLabel for="inputPais" value="País" id="lbInputPais">
+                                <p:inputMask id="inputPais" value="#{bean.address.country}"  placeholder="Digite o País"></p:inputMask>
+                            </p:outputLabel>
+                            <p:outputPanel style="margin-top:15px;">
+                                <p:selectBooleanCheckbox id="cbFavorite" value="#{bean.mainAddress}" />
+                                <h:outputText value="Principal" style="margin-left:5px;"/>
+                            </p:outputPanel>
+                        </p:panelGrid>
+                    </p:outputPanel>
+                    <p:commandButton value="Adicionar" form=":mainForm"  id="btIncludeAddress" actionListener="#{bean.includeAddress}" update="dataTableAddress panelForm" style="margin-top:15px;margin-left:0px;width:150px;"  >
+<!-- mainForm:j_idt46:-->
+                    </p:commandButton>
+
+                    <p:dataTable id="dataTableAddress"  scrollable="true" scrollHeight="100" var="address"  reflow="true"
+                                 value="#{bean.addressList}" editable="true" style="margin-bottom:20px"
+                                 widgetVar="dt" >
+                        <f:facet name="header"  id="facetGridAddress">
+                            <p:panelGrid  id="pgToggler">
+                                <p:commandButton id="bttoggler" type="button" width="100px" value="Colunas" style="float:right;width:100px" icon="ui-icon-calculator" />
+                                <p:columnToggler  id="columnToggler" datasource="dataTableAddress" width="100px" trigger="bttoggler" />
+                            </p:panelGrid>
+                        </f:facet>
+                        <p:ajax event="rowEdit" listener="#{bean.onAddresRowEdit}" />
+                        <p:ajax event="rowEditCancel" listener="#{bean.onAddresCancel}"/>
+                        <p:column headerText="Tipo">
+                            <p:cellEditor>
+                                <f:facet name="output">
+                                    <h:outputText value="#{address.type.name}" />
+                                </f:facet>
+                                <f:facet name="input">
+                                    <p:selectOneMenu id="modelInput" value="#{address.type.name}" panelStyle="width:150px"
+                                                     var="t" style="width:100%" filter="true" filterMatchMode="startsWith">
+                                        <f:selectItems value="#{bean.addressTypeList}" var="ad" itemLabel="#{ad.name}" itemValue="#{ad.id}" />
+
+                                        <p:column>
+                                            <h:outputText value="#{t.name}" />
+                                        </p:column>
+                                    </p:selectOneMenu>
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
+                        <p:column headerText="Endereço">
+                            <p:cellEditor>
+                                <f:facet name="output">
+                                    <h:outputText value="#{address.street}" />
+                                </f:facet>
+                                <f:facet name="input">
+                                    <p:inputText id="inputStreet" value="#{address.street}" style="width:100%"/>
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
+                        <p:column headerText="Número">
+                            <p:cellEditor>
+                                <f:facet name="output">
+                                    <h:outputText value="#{address.number}" />
+                                </f:facet>
+                                <f:facet name="input">
+                                    <p:inputText id="inputNumber" value="#{address.number}" style="width:100%"/>
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
+                        <p:column headerText="Complemento">
+                            <p:cellEditor>
+                                <f:facet name="output">
+                                    <h:outputText value="#{address.additional}" />
+                                </f:facet>
+                                <f:facet name="input">
+                                    <p:inputText id="inputAdd" value="#{address.additional}" style="width:100%"/>
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
+                        <p:column headerText="CEP"  visible="false">
+                            <p:cellEditor>
+                                <f:facet name="output">
+                                    <h:outputText value="#{address.zipcode}" />
+                                </f:facet>
+                                <f:facet name="input">
+                                    <p:inputText id="inputZipCode" value="#{address.zipcode}" style="width:100%"/>
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
+                        <p:column headerText="Cidade">
+                            <p:cellEditor>
+                                <f:facet name="output">
+                                    <h:outputText value="#{address.city}" />
+                                </f:facet>
+                                <f:facet name="input">
+                                    <p:inputText id="inputCity" value="#{address.city}" style="width:100%"/>
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
+                        <p:column headerText="Estado"  visible="false">
+                            <p:cellEditor>
+                                <f:facet name="output">
+                                    <h:outputText value="#{address.state}" />
+                                </f:facet>
+                                <f:facet name="input">
+                                    <p:inputText id="inputState" value="#{address.state}" style="width:100%"/>
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
+                        <p:column headerText="País" visible="false">
+                            <p:cellEditor>
+                                <f:facet name="output">
+                                    <h:outputText value="#{address.country}" />
+                                </f:facet>
+                                <f:facet name="input">
+                                    <p:inputText id="inputCountry" value="#{address.country}" style="width:100%"/>
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
+                        <p:column style="width:32px" width="32px" toggleable="false">
+                            <p:rowEditor update="dataTableAddress panelForm" />
+                        </p:column>
+                        <p:column  style="width:32px" width="32px" toggleable="false" icon="ui-icon-trash">
+                            <p:commandButton actionListener="#{bean.removeAddress(address)}" icon="ui-icon-trash"  update="dataTableAddress mainForm:idTbViewCustomer:panelForm">
+                                <p:confirm header="Remover endereço" message="Deseja remover o endereço?" icon="ui-icon-trash" />
+                            </p:commandButton>
+                        </p:column>
+                    </p:dataTable>
+                <p:confirmDialog global="true">
+                    <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                    <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                </p:confirmDialog>
+            </div>
+    </p:outputPanel>
+</ui:composition>

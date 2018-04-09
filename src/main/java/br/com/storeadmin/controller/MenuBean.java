@@ -32,10 +32,14 @@ public class MenuBean implements Serializable{
 
     public void setRegCustomer()
     {
-        this.page = "customerfront";
+        this.page = "/customer/customerfront";
     }
     public void setRegProduct()
     {
         this.page = "productfront";
+    }
+    public void setRAdress()
+    {
+        this.page = "/template/register/addresses";
     }
 }

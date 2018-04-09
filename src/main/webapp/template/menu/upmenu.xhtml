@@ -1,0 +1,20 @@
+<ui:composition lang="pt-br"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:jsf="http://xmlns.jcp.org/jsf"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                id="mainComp">
+
+    <p:outputPanel id="outMenu" >
+            <p:growl id="idMessageMenu"  for="messageMenu" showDetail="true" />
+            <p:outputPanel class="ui-grid ui-fluid" id="divMenu">
+                <p:panelGrid columns="6" id="panelMenu" layout="grid" columnClasses="ui-grid-col-2,ui-grid-col-2,ui-grid-col-3,ui-grid-col-2,ui-grid-col-1,ui-grid-col-1" styleClass="ui-panelgrid-blank">
+                                <p:commandButton type="#{paramSaveType}" id="buttonSaveMenu" update="#{paramUpdate}" form="#{paramSaveForm}" value="Salvar" icon="ui-icon-document" actionListener="#{bean.save}" />
+                                <p:commandButton type="button"           id="buttonRemMenu"  value="Remover" icon="ui-icon-folder-open" />
+                                <!--p:commandButton type="button"        id="buttonMoreMenu"  value="Mais Opções" icon="ui-icon-folder-open" /-->
+                </p:panelGrid>
+            </p:outputPanel>
+    </p:outputPanel>
+</ui:composition>

@@ -212,7 +212,7 @@ public abstract class GenericDAO < T extends Serializable> {
 		}
 		
 	}
-	public T findByID(int id)
+	public T findByID(long id)
 	{
 		//EntityManager manager = null;
 		try

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<h:html lang="pt-br"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:jsf="http://xmlns.jcp.org/jsf"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+    </h:head>
+    <h:body>
+        <p:outputPanel id="outForm">
+            <div class="ui-grid ui-fluid" jsf:id="divForm">
+                <h:form id="mainForm">
+                    <ui:include src="/template/menu/upmenu.xhtml" id="includeMenu">
+                        <ui:param name="paramSaveType" value="submit" />
+                        <ui:param name="paramSaveForm" value="mainForm" />
+                        <ui:param name="bean" value="#{customerBean}" />
+                        <ui:param name="paramUpdate" value="mainForm formSearchClient:tblSearchClient" />
+                    </ui:include>
+                    <p:tabView id="idTbViewCustomer">
+                        <p:tab id="personal" title="Dados Pessoais">
+                            <p:panel header="Dados Pessoais">
+                                <ui:include src="/customer/customerpersonal.xhtml">
+                                    <ui:param name="bean" value="#{customerBean}" />
+                                </ui:include>
+                            </p:panel>
+                        </p:tab>
+                        <p:tab  id="idTbViewAddress" title="Endereço">
+                            <p:panel header="Detalhes de Endereço">
+                                <ui:include src="/template/register/addresses.xhtml">
+                                    <ui:param name="bean" value="#{customerBean}" />
+                                </ui:include>
+                            </p:panel>
+                        </p:tab>
+
+                        <p:tab  id="idTbViewContact" title="Contato">
+                            <p:panel header="Informações de Contato">
+                                <ui:include src="/template/register/contacts.xhtml">
+                                    <ui:param name="bean" value="#{customerBean}" />
+                                </ui:include>
+                            </p:panel>
+                        </p:tab>
+                    </p:tabView>
+                </h:form>
+
+            </div>
+        </p:outputPanel>
+    </h:body>
+</h:html>

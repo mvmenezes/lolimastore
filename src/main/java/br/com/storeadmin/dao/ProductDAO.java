@@ -1,6 +1,6 @@
 package br.com.storeadmin.dao;
 
-import br.com.storeadmin.model.Product;
+import br.com.storeadmin.model.Store.Product;
 
 public class ProductDAO extends GenericDAO<Product>
 {

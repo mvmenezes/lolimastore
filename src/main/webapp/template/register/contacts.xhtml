@@ -1,0 +1,128 @@
+<ui:composition lang="pt-br"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:jsf="http://xmlns.jcp.org/jsf"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <style>
+        .ui-selectonemenu-item
+        {
+            font-size:13px;
+        }
+    </style>
+    <h:outputScript name="js/contacts.js"></h:outputScript>
+    <p:outputPanel id="panelContact">
+           <div class="ui-fluid">
+                <p:outputPanel id="panelFormContact">
+                    <p:messages for="msgContact" id="idmsgContact" showSummary="false"  showDetail="true" closable="true" />
+                    <p:panelGrid columns="3" columnClasses="ui-grid-col-3,ui-grid-col-6,ui-grid-col-3" layout="grid" styleClass="ui-panelgrid-blank">
+                        <p:outputLabel for="inputTypeContact" value="Tipo de Contato">
+                            <p:selectOneMenu id="inputTypeContact" value="#{bean.typeContactID}" panelStyle="width:180px"
+                                             var="t" style="width:140px;font-size:15px;" filter="true" filterMatchMode="startsWith">
+                                <f:selectItems value="#{bean.contactTypeList}" var="ad" itemLabel="#{ad.name}" itemValue="#{ad.id}" />
+                                <tr class="ui-selectonemenu-item ui-selectonemenu-row ui-widget-content"  jsf:itemLabel="Novo" jsf:itemValue="-1" jsf:id="inputNewContact">
+                                        <td colspan="1">Novo</td>
+                                </tr>
+                                <p:column>
+                                    <h:outputText value="#{t.name}" />
+                                </p:column>
+                            </p:selectOneMenu>
+                        </p:outputLabel>
+                        <p:outputLabel for="inputNumberContact" value="Contato">
+                            <p:inputMask id="inputNumberContact" value="#{bean.contact.number}"  placeholder="Digite o número ou forma de contato"></p:inputMask>
+                        </p:outputLabel>
+                        <p:outputLabel for="inputNContactNote" value="Observação">
+                            <p:inputMask id="inputNContactNote" value="#{bean.contact.note}"  placeholder="Digite alguma observação"></p:inputMask>
+                        </p:outputLabel>
+
+                    </p:panelGrid>
+                    <p:panelGrid columns="4"  columnClasses="ui-grid-col-3,ui-grid-col-3,ui-grid-col-3" layout="grid" styleClass="ui-panelgrid-blank">
+                        <p:outputPanel style="margin-top:15px;">
+                            <p:selectBooleanCheckbox id="cbContactFavorite" value="#{bean.mainContact}" />
+                            <h:outputText value="Principal" style="margin-left:5px;"/>
+                        </p:outputPanel>
+                        <p:outputPanel style="margin-top:15px;">
+                            <p:selectBooleanCheckbox id="cbContactWpp" value="#{bean.wppContact}" />
+                            <h:outputText value="WhatsApp" style="margin-left:5px;"/>
+                        </p:outputPanel>
+                        <p:outputPanel></p:outputPanel>
+                        <p:commandButton type="submit" form="mainForm" value="Adicionar" update="dataTableContacts panelFormContact" style="margin-top:15px;margin-left:0px;" actionListener="#{bean.includeContact}"></p:commandButton>
+
+                    </p:panelGrid>
+                </p:outputPanel>
+                <p:dataTable id="dataTableContacts" var="contact"  reflow="true" scrollable="true" scrollHeight="100"
+                             value="#{bean.contactList}" editable="true" style="margin-bottom:20px" widgetVar="dt"
+                             >
+                    <p:ajax event="rowEdit" render="dataTableContacts"  listener="#{bean.onContactRowEdit}" oncomplete="updateRows()" update="dataTableContacts  mainForm:idTbViewCustomer:idmsgContact"  />
+                    <p:ajax event="rowEditCancel" listener="#{bean.onContactCancel}"/>
+                    <p:column style="width:32px">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <p:graphicImage  name="imagens/Favorite_Star_239.png"  rendered="#{contact.main.equals('Y')}"/>
+                            </f:facet>
+                            <f:facet name="input">
+                                <p:selectBooleanCheckbox value="#{contact.favorite}">
+                                </p:selectBooleanCheckbox>
+                            </f:facet>
+                        </p:cellEditor>
+                        </p:column>
+                    <p:column headerText="Tipo">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{contact.type.name}" />
+                            </f:facet>
+                            <f:facet name="input">
+                                <p:selectOneMenu id="inputTypeContactTable" value="#{contact.type.id}" panelStyle="width:180px"
+                                                 var="t" filter="true" filterMatchMode="startsWith">
+                                    <f:selectItems value="#{bean.contactTypeList}" var="ad" itemLabel="#{ad.name}" itemValue="#{ad.id}" />
+                                    <p:column>
+                                        <h:outputText value="#{t.name}" />
+                                    </p:column>
+                                </p:selectOneMenu>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+
+                    <p:column headerText="Contact">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{contact.number}" />
+                            </f:facet>
+                            <f:facet name="input">
+                                <p:inputText value="#{contact.number}" style="width:100%" />
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                    <p:column headerText="Observação">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{contact.note}" />
+                            </f:facet>
+                            <f:facet name="input">
+                                <p:inputText value="#{contact.note}" style="width:100%" />
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                    <p:column style="width:32px">
+                        <p:link href="#{contact.linkWpp}" rendered="#{contact.linkWpp != null}" target="_blank">
+                            <p:graphicImage  name="imagens/whatsapp_icon-icons.com_53606.png"  rendered="#{contact.linkWpp != null}"/>
+                        </p:link>
+                    </p:column>
+                    <p:column style="width:32px"  icon="ui-icon-pencil">
+                        <p:rowEditor update="dataTableContacts mainForm:idTbViewCustomer:panelFormContact"/>
+                    </p:column>
+                    <p:column style="width:32px" width="32px" icon="ui-icon-trash">
+                        <p:commandButton actionListener="#{bean.removeContact(contact)}" icon="ui-icon-trash"  update="dataTableContacts mainForm:idTbViewCustomer:panelFormContact">
+                            <p:confirm header="Remover contato" message="Deseja remover o contato?" icon="ui-icon-trash" />
+                        </p:commandButton>
+                    </p:column>
+                </p:dataTable>
+                <p:confirmDialog global="true">
+                    <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                    <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                </p:confirmDialog>
+            </div>
+    </p:outputPanel>
+</ui:composition>

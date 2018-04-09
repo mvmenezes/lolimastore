@@ -1,8 +1,8 @@
 package br.com.storeadmin.controller;
 
 import br.com.storeadmin.dao.ProductTypeDAO;
-import br.com.storeadmin.model.Product;
-import br.com.storeadmin.model.ProductType;
+import br.com.storeadmin.model.Store.Product;
+import br.com.storeadmin.model.Store.ProductType;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.*;
@@ -34,6 +34,7 @@ public class ProductBean implements Serializable {
         product = new Product();
         types = new ArrayList<ProductType>();
         dao = new ProductTypeDAO();
+        refreshProductType();
     }
 
     public void insertProduct()
@@ -60,5 +61,13 @@ public class ProductBean implements Serializable {
     public void refreshProductType()
     {
         types = dao.findAll();
+    }
+
+    public List<ProductType> getTypes() {
+        return types;
+    }
+
+    public void setTypes(List<ProductType> types) {
+        this.types = types;
     }
 }

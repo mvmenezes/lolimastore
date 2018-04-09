@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<h:html lang="pt-br"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:jsf="http://xmlns.jcp.org/jsf"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+    </h:head>
+    <h:body>
+        <div class="ui-fluid">
+        <ui:composition id="compSearchClient">
+                <h3>Consulta de Clientes</h3>
+                <h:form id="formSearchClient">
+                <p:dataTable id="tblSearchClient" var="customer" value="#{customerBean.customersList}"
+                             paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                             paginator="true" rows="10" style="margin-bottom:20px">
+<!--
+                    <f:facet name="{Exporters}" id="facetExp">
+                        <h:commandLink id="cl">
+                            <p:graphicImage name="/demo/images/excel.png" width="24"/>
+                            <p:dataExporter type="xls" target="tbl" fileName="cars" />
+                        </h:commandLink>
+
+                        <h:commandLink>
+                            <p:graphicImage name="/demo/images/pdf.png" width="24"/>
+                            <p:dataExporter type="pdf" target="tbl" fileName="cars"/>
+                        </h:commandLink>
+
+                        <h:commandLink>
+                            <p:graphicImage name="/demo/images/csv.png" width="24"/>
+                            <p:dataExporter type="csv" target="tbl" fileName="cars" />
+                        </h:commandLink>
+
+                        <h:commandLink>
+                            <p:graphicImage name="/demo/images/xml.png" width="24"/>
+                            <p:dataExporter type="xml" target="tbl" fileName="cars" />
+                        </h:commandLink>
+                    </f:facet>
+-->
+
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Nome" />
+                        </f:facet>
+                        <h:outputText value="#{customer.name}" />
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Código" />
+                        </f:facet>
+                        <h:outputText value="#{customer.code}" />
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Referencia" />
+                        </f:facet>
+                        <h:outputText value="#{customer.note}" />
+                    </p:column>
+                </p:dataTable>
+
+            </h:form>
+                <p:outputPanel deferred="true" deferredMode="visible">
+                    <p:commandButton value="Novo"  type="button" style="margin-right:20px"
+                                     onclick="PF('dlgNewCustomer').show();"></p:commandButton>
+                    <p:commandButton value="Importar"></p:commandButton>
+
+                    <p:dialog header="Informações de Clientes" width="800px" stule="margin-top:10px;" widgetVar="dlgNewCustomer" id="dlgNewCustomer"
+                              modal="true" maximizable="true"
+                              responsive="true"
+                              closeOnEscape="true"
+                              positionType="fixed"
+                              position="top">
+                        <ui:include src="/customer/customer.xhtml"/>
+                    </p:dialog>
+                </p:outputPanel>
+        </ui:composition>
+        </div>
+
+    </h:body>
+</h:html>
