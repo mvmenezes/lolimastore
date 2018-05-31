@@ -19,9 +19,9 @@
                     <p:messages for="msgContact" id="idmsgContact" showSummary="false"  showDetail="true" closable="true" />
                     <p:panelGrid columns="3" columnClasses="ui-grid-col-3,ui-grid-col-6,ui-grid-col-3" layout="grid" styleClass="ui-panelgrid-blank">
                         <p:outputLabel for="inputTypeContact" value="Tipo de Contato">
-                            <p:selectOneMenu id="inputTypeContact" value="#{bean.typeContactID}" panelStyle="width:180px"
+                            <p:selectOneMenu id="inputTypeContact" value="#{bean.contactBean.typeContactID}" panelStyle="width:180px"
                                              var="t" style="width:140px;font-size:15px;" filter="true" filterMatchMode="startsWith">
-                                <f:selectItems value="#{bean.contactTypeList}" var="ad" itemLabel="#{ad.name}" itemValue="#{ad.id}" />
+                                <f:selectItems value="#{bean.contactBean.contactTypeList}" var="ad" itemLabel="#{ad.name}" itemValue="#{ad.id}" />
                                 <tr class="ui-selectonemenu-item ui-selectonemenu-row ui-widget-content"  jsf:itemLabel="Novo" jsf:itemValue="-1" jsf:id="inputNewContact">
                                         <td colspan="1">Novo</td>
                                 </tr>
@@ -31,32 +31,33 @@
                             </p:selectOneMenu>
                         </p:outputLabel>
                         <p:outputLabel for="inputNumberContact" value="Contato">
-                            <p:inputMask id="inputNumberContact" value="#{bean.contact.number}"  placeholder="Digite o número ou forma de contato"></p:inputMask>
+                            <p:inputMask id="inputNumberContact" value="#{bean.contactBean.contact.number}"  placeholder="Digite o número ou forma de contato"></p:inputMask>
                         </p:outputLabel>
                         <p:outputLabel for="inputNContactNote" value="Observação">
-                            <p:inputMask id="inputNContactNote" value="#{bean.contact.note}"  placeholder="Digite alguma observação"></p:inputMask>
+                            <p:inputMask id="inputNContactNote" value="#{bean.contactBean.contact.note}"  placeholder="Digite alguma observação"></p:inputMask>
                         </p:outputLabel>
 
                     </p:panelGrid>
                     <p:panelGrid columns="4"  columnClasses="ui-grid-col-3,ui-grid-col-3,ui-grid-col-3" layout="grid" styleClass="ui-panelgrid-blank">
                         <p:outputPanel style="margin-top:15px;">
-                            <p:selectBooleanCheckbox id="cbContactFavorite" value="#{bean.mainContact}" />
+                            <p:selectBooleanCheckbox id="cbContactFavorite" value="#{bean.contactBean.mainContact}" />
                             <h:outputText value="Principal" style="margin-left:5px;"/>
                         </p:outputPanel>
                         <p:outputPanel style="margin-top:15px;">
-                            <p:selectBooleanCheckbox id="cbContactWpp" value="#{bean.wppContact}" />
+                            <p:selectBooleanCheckbox id="cbContactWpp" value="#{bean.contactBean.wppContact}" />
                             <h:outputText value="WhatsApp" style="margin-left:5px;"/>
                         </p:outputPanel>
                         <p:outputPanel></p:outputPanel>
-                        <p:commandButton type="submit" form="mainForm" value="Adicionar" update="dataTableContacts panelFormContact" style="margin-top:15px;margin-left:0px;" actionListener="#{bean.includeContact}"></p:commandButton>
+                        <p:commandButton type="submit" form="mainForm" value="Adicionar" update="dataTableContacts panelFormContact" style="margin-top:15px;margin-left:0px;" actionListener="#{bean.contactBean.includeContact}"></p:commandButton>
 
                     </p:panelGrid>
                 </p:outputPanel>
                 <p:dataTable id="dataTableContacts" var="contact"  reflow="true" scrollable="true" scrollHeight="100"
-                             value="#{bean.contactList}" editable="true" style="margin-bottom:20px" widgetVar="dt"
+                             value="#{bean.contactBean.contactList}" editable="true" style="margin-bottom:20px" widgetVar="dt"
                              >
-                    <p:ajax event="rowEdit" render="dataTableContacts"  listener="#{bean.onContactRowEdit}" oncomplete="updateRows()" update="dataTableContacts  mainForm:idTbViewCustomer:idmsgContact"  />
-                    <p:ajax event="rowEditCancel" listener="#{bean.onContactCancel}"/>
+
+                    <!--p:ajax event="rowEdit"   listener="#{bean.contactBean.onContactRowEdit(contact)}" oncomplete="updateRows()" update="dataTableContacts  mainForm:idTbViewCustomer:idmsgContact"  />
+                    <p:ajax event="rowEditCancel" listener="#{bean.contactBean.onContactCancel}"/-->
                     <p:column style="width:32px">
                         <p:cellEditor>
                             <f:facet name="output">
@@ -76,7 +77,7 @@
                             <f:facet name="input">
                                 <p:selectOneMenu id="inputTypeContactTable" value="#{contact.type.id}" panelStyle="width:180px"
                                                  var="t" filter="true" filterMatchMode="startsWith">
-                                    <f:selectItems value="#{bean.contactTypeList}" var="ad" itemLabel="#{ad.name}" itemValue="#{ad.id}" />
+                                    <f:selectItems value="#{bean.contactBean.contactTypeList}" var="ad" itemLabel="#{ad.name}" itemValue="#{ad.id}" />
                                     <p:column>
                                         <h:outputText value="#{t.name}" />
                                     </p:column>
@@ -110,11 +111,11 @@
                             <p:graphicImage  name="imagens/whatsapp_icon-icons.com_53606.png"  rendered="#{contact.linkWpp != null}"/>
                         </p:link>
                     </p:column>
-                    <p:column style="width:32px"  icon="ui-icon-pencil">
+                    <!--p:column style="width:32px"  icon="ui-icon-check">
                         <p:rowEditor update="dataTableContacts mainForm:idTbViewCustomer:panelFormContact"/>
-                    </p:column>
+                    </p:column-->
                     <p:column style="width:32px" width="32px" icon="ui-icon-trash">
-                        <p:commandButton actionListener="#{bean.removeContact(contact)}" icon="ui-icon-trash"  update="dataTableContacts mainForm:idTbViewCustomer:panelFormContact">
+                        <p:commandButton actionListener="#{bean.contactBean.removeContact(contact)}" icon="ui-icon-trash"  update="dataTableContacts mainForm:idTbViewCustomer:panelFormContact">
                             <p:confirm header="Remover contato" message="Deseja remover o contato?" icon="ui-icon-trash" />
                         </p:commandButton>
                     </p:column>

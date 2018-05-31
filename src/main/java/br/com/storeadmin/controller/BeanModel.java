@@ -10,6 +10,7 @@ public abstract class BeanModel {
     protected final String MSG_ID_ADDRESS = "msgAddress";
     protected final String MSG_ID_GROW_INDEX = "GrowMessage";
     protected final String MSG_ID_CONTACT = "msgContact";
+    protected final String MSG_ID_IMPORT = "messageImport";
 
 
 

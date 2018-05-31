@@ -36,7 +36,7 @@
                         </p:outputLabel>
                     </p:outputPanel>
                     <p:outputLabel for="inputCode" value="#{msg.person_code}">
-                        <p:inputMask id="inputCode" value="#{bean.customer.code}" placeholder="#{msg.person_code}"></p:inputMask>
+                        <p:inputMask id="inputCode" value="#{bean.customer.code}" style="text-transform:uppercase;" placeholder="#{msg.person_code}"></p:inputMask>
                     </p:outputLabel>
                     <p:outputLabel for="inputEmail" value="#{msg.person_email}">
                         <p:inputText id="inputEmail" value="#{bean.customer.email}"  placeholder="#{msg.person_email}"></p:inputText>
@@ -48,7 +48,9 @@
                         </p:selectOneRadio>
                     </p:outputLabel>
                     <p:outputLabel for="inputBirth" value="#{msg.person_birthdate}">
-                        <p:inputMask mask="99/99/9999" id="inputBirth" value="#{bean.customer.birthDate}" placeholder="#{msg.person_age}"></p:inputMask>
+                        <p:inputMask mask="99/99/9999" id="inputBirth" value="#{bean.customer.birthDate}" placeholder="#{msg.person_age}">
+                            <f:convertDateTime pattern="dd/MM/yyyy" />
+                        </p:inputMask>
                     </p:outputLabel>
                 </p:panelGrid>
                 <p:panelGrid columns="4" layout="grid" styleClass="ui-panelgrid-blank">

@@ -8,6 +8,11 @@ import java.util.Date;
 @Table(name="ADDRESS")
 public class Address implements Serializable {
 
+
+    @Transient
+    private boolean favorite;
+
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name="ADD_ID")
@@ -33,16 +38,16 @@ public class Address implements Serializable {
     @OneToOne
     @JoinColumn(name = "ADT_ID")
     private AddressType type;
-    @ManyToOne(fetch=FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CTM_ID")
     private Customer customer;
-    @ManyToOne(fetch=FetchType.EAGER)
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "FAC_ID")
     private Factory factory;
-    @ManyToOne(fetch=FetchType.EAGER)
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "PRV_ID")
     private Provider provider;
-    @ManyToOne(fetch=FetchType.EAGER)
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "RTL_ID")
     private Retailer retailer;
 
@@ -206,5 +211,13 @@ public class Address implements Serializable {
 
     public void setMain(String main) {
         this.main = main;
+    }
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
+    }
+
+    public boolean isFavorite() {
+        return favorite;
     }
 }

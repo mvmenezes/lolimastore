@@ -1,3 +1,4 @@
+br\com\storeadmin\dao\ContactDAO.class
 br\com\storeadmin\dao\JPAUtil.class
 br\com\storeadmin\model\Store\Receipt.class
 br\com\storeadmin\model\Store\Sale.class
@@ -5,6 +6,8 @@ br\com\storeadmin\controller\CustomerBean.class
 br\com\storeadmin\dao\ProductDAO.class
 br\com\storeadmin\model\EnumModel\ECustomerType.class
 br\com\storeadmin\model\EnumModel\EActive.class
+br\com\storeadmin\business\AddressBO.class
+br\com\storeadmin\controller\ContactBean.class
 br\com\storeadmin\model\Store\ProductAttribute.class
 br\com\storeadmin\model\Store\Responsable.class
 br\com\storeadmin\model\EnumModel\EStoreAttribute.class
@@ -14,7 +17,9 @@ br\com\storeadmin\WS\SearchCEPWS.class
 br\com\storeadmin\model\Master\Store.class
 br\com\storeadmin\model\Common\LifeCycleListener.class
 br\com\storeadmin\model\Store\Attribute.class
+br\com\storeadmin\business\ContactBO.class
 br\com\storeadmin\dao\CustomerDAO.class
+br\com\storeadmin\business\BOModel.class
 br\com\storeadmin\model\Store\Customer.class
 br\com\storeadmin\model\Store\Contact.class
 br\com\storeadmin\model\Store\Provider.class
@@ -24,6 +29,7 @@ br\com\storeadmin\model\Store\AddressType.class
 br\com\storeadmin\controller\ProductBean.class
 br\com\storeadmin\controller\ImportBean.class
 br\com\storeadmin\controller\BeanModel.class
+br\com\storeadmin\controller\AddressBean.class
 br\com\storeadmin\model\Store\Payment.class
 br\com\storeadmin\model\Store\Address.class
 br\com\storeadmin\model\Store\Tag.class
@@ -34,6 +40,9 @@ br\com\storeadmin\dao\ProductTypeDAO.class
 br\com\storeadmin\controller\MenuBean.class
 br\com\storeadmin\model\Store\Image.class
 br\com\storeadmin\controller\BeanApplication.class
+br\com\storeadmin\business\ContactTypeBO.class
+br\com\storeadmin\model\EnumModel\TypeImport.class
+br\com\storeadmin\business\AddressTypeBO.class
 br\com\storeadmin\model\EnumModel\EYesNo.class
 br\com\storeadmin\model\Store\Person.class
 br\com\storeadmin\model\Common\ColumnModel.class
@@ -41,7 +50,9 @@ br\com\storeadmin\model\Store\PaymentCondition.class
 br\com\storeadmin\dao\AddressTypeDAO.class
 br\com\storeadmin\model\Master\User.class
 br\com\storeadmin\model\Store\Retailer.class
+br\com\storeadmin\dao\AddressDAO.class
 br\com\storeadmin\model\EnumModel\EGender.class
 br\com\storeadmin\controller\MainBean.class
 br\com\storeadmin\model\Store\ContactType.class
+br\com\storeadmin\business\CustomerBO.class
 br\com\storeadmin\controller\Bean.class

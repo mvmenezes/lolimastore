@@ -60,7 +60,6 @@ public class ProductBean implements Serializable {
 
     public void refreshProductType()
     {
-        types = dao.findAll();
     }
 
     public List<ProductType> getTypes() {

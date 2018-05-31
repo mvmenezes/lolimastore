@@ -16,41 +16,41 @@ public class Contact implements Serializable {
     private boolean favorite;
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name="CTT_ID")
+    @Column(name="CON_ID")
     private long id;
-    @Column(name="CTT_NUMBER")
+    @Column(name="CON_NUMBER")
     private String number;
     @OneToOne
     @JoinColumn(name="CTT_ID")
     private ContactType type;
-    @ManyToOne(fetch=FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CTM_ID")
     private Customer customer;
-    @Column(name="ADD_IND_MAIN")
+    @Column(name="CON_IND_MAIN")
     private String main;
-    @Column(name="ADD_MASK")
+    @Column(name="CON_MASK")
     private String mask;
-    @Column(name="ADD_NOTE")
+    @Column(name="CON_NOTE")
     private String note;
-    @ManyToOne(fetch=FetchType.EAGER)
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "FAC_ID")
     private Factory factory;
-    @ManyToOne(fetch=FetchType.EAGER)
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "PRV_ID")
     private Provider provider;
-    @ManyToOne(fetch=FetchType.EAGER)
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "RTL_ID")
     private Retailer retailer;
 
     @Temporal(TemporalType.DATE)
-    @Column(name="CTT_CREATE_DATE")
+    @Column(name="CON_CREATE_DATE")
     private Date createDate;
 
     @Temporal(TemporalType.DATE)
-    @Column(name="CTT_MOD_DATE")
+    @Column(name="CON_MOD_DATE")
     private Date modifiedDate;
 
-    @Column(name="CTT_LINK_WPP")
+    @Column(name="CON_LINK_WPP")
     private String linkWpp;
 
 

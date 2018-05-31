@@ -5,7 +5,9 @@ import br.com.storeadmin.model.EnumModel.EGender;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="CUSTOMER")
@@ -26,10 +28,10 @@ public class Customer extends Person implements Serializable {
     @Column(name="CTM_EMAIL")
     private String email;
 
-    @OneToMany(cascade = { CascadeType.ALL }, orphanRemoval = true, mappedBy = "customer")
-    private List<Contact> contacts;
-    @OneToMany(cascade = { CascadeType.ALL }, orphanRemoval = true, mappedBy = "customer")
-    private List<Address> addresses;
+    @OneToMany(fetch = FetchType.EAGER , mappedBy = "customer", cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
+    private Set<Contact> contacts;
+    @OneToMany(fetch = FetchType.EAGER , mappedBy = "customer", cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
+    private Set<Address> addresses;
 
     @Column(name="CTM_INSTAGRAM")
     private String instagram;
@@ -60,6 +62,8 @@ public class Customer extends Person implements Serializable {
     {
         gender = "F";
         type = "F";
+        contacts = new HashSet<Contact>();
+        addresses = new HashSet<Address>();
     }
     @PrePersist
     @PreUpdate
@@ -122,19 +126,19 @@ public class Customer extends Person implements Serializable {
         this.email = email;
     }
 
-    public List<Contact> getContacts() {
+    public Set<Contact> getContacts() {
         return contacts;
     }
 
-    public void setContacts(List<Contact> contacts) {
+    public void setContacts(Set<Contact> contacts) {
         this.contacts = contacts;
     }
 
-    public List<Address> getAddresses() {
+    public Set<Address> getAddresses() {
         return addresses;
     }
 
-    public void setAddresses(List<Address> addresses) {
+    public void setAddresses(Set<Address> addresses) {
         this.addresses = addresses;
     }
 

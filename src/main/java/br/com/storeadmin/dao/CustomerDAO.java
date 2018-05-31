@@ -8,4 +8,11 @@ public class CustomerDAO extends GenericDAO<Customer>{
     {
         super(Customer.class);
     }
+
+
+    @Override
+    public void save(Customer entity) throws Exception {
+        super.save(entity);
+
+    }
 }

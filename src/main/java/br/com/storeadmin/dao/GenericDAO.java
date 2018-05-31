@@ -1,7 +1,9 @@
 package br.com.storeadmin.dao;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -24,8 +26,7 @@ public abstract class GenericDAO < T extends Serializable> {
 	}
 
 	
-	public void save(T entity)
-	{
+	public void save(T entity) throws Exception {
 		//EntityManager manager = null;
 		try
 		{
@@ -39,7 +40,7 @@ public abstract class GenericDAO < T extends Serializable> {
 		manager.getTransaction().commit();
 		}catch(Exception erro)
 		{
-			System.out.println(erro.getMessage());
+			throw new Exception(erro.getMessage());
 		}finally {
 			if (manager.getTransaction().isActive())
 				manager.getTransaction().rollback();
@@ -109,6 +110,8 @@ public abstract class GenericDAO < T extends Serializable> {
 			manager = getEntityManager();
 		
 			manager.getTransaction().begin();
+			if(!manager.contains(entity))
+				entity = manager.merge(entity);
 			manager.remove(entity);
 			manager.getTransaction().commit();
 			manager.close();
@@ -235,17 +238,41 @@ public abstract class GenericDAO < T extends Serializable> {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<T> findAll()
+	public Set<T> findAll()
 	{
 		//EntityManager manager = null;
 		try
 		{
 			manager = getEntityManager();
 			manager.getTransaction().begin();
-	
+
 			Query query = manager.createQuery("from "+ aClass.getSimpleName());
-			
-			List<T> entities = query.getResultList();
+			Set<T> entities = new HashSet<T>();
+			entities.addAll(query.getResultList());
+			manager.getTransaction().commit();
+			return entities;
+		}catch(Exception erro)
+		{
+			System.out.println(erro.getMessage());
+			return null;
+		}finally {
+			if (manager.getTransaction().isActive())
+				manager.getTransaction().rollback();
+			if (manager.isOpen())
+				manager.close();
+		}
+	}
+
+	public List<T> findAllList()
+	{
+		//EntityManager manager = null;
+		try
+		{
+			manager = getEntityManager();
+			manager.getTransaction().begin();
+
+			Query query = manager.createQuery("from "+ aClass.getSimpleName());
+			List<T> entities =query.getResultList();
 			manager.getTransaction().commit();
 			return entities;
 		}catch(Exception erro)

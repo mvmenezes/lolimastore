@@ -6,6 +6,7 @@
                 xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:outputScript name="js/addresses.js"></h:outputScript>
     <p:outputPanel id="panelContent">
             <div class="ui-fluid" jsf:id="divResp" id="divResp">
                     <p:outputPanel id="panelForm">
@@ -14,9 +15,9 @@
 
                             <p:outputPanel>
                             <p:outputLabel for="inputType" value="Tipo de Endereço">
-                                <p:selectOneMenu id="inputType" value="#{bean.typeAddressID}" panelStyle="width:120px"
+                                <p:selectOneMenu id="inputType" value="#{bean.addressBean.typeAddressID}" panelStyle="width:120px"
                                                      var="t" style="width:150px" filter="true" filterMatchMode="startsWith">
-                                        <f:selectItems value="#{bean.addressTypeList}" var="ad" itemLabel="#{ad.name}" itemValue="#{ad.id}" />
+                                        <f:selectItems value="#{bean.addressBean.addressTypeList}" var="ad" itemLabel="#{ad.name}" itemValue="#{ad.id}" />
 
                                         <p:column>
                                             <h:outputText value="#{t.name}" />
@@ -28,9 +29,9 @@
 
                             <p:outputPanel>
                                 <p:outputLabel for="inputZipCode" value="CEP">
-                                    <p:inputMask id="inputZipCode" value="#{bean.address.zipcode}" style="width:100px;" mask="99999-999" placeholder="Digite o CEP"></p:inputMask>
+                                    <p:inputMask id="inputZipCode" value="#{bean.addressBean.address.zipcode}" style="width:100px;" mask="99999-999" placeholder="Digite o CEP"></p:inputMask>
                                 </p:outputLabel>
-                                <p:commandButton type="submit" id="btSearchZipCode"  value="Buscar CEP"  form="mainForm" actionListener="#{bean.searchZipCode}" update="mainForm" style="margin-top:15px;margin-left:5px;width:120px;"></p:commandButton>
+                                <p:commandButton type="submit" id="btSearchZipCode"  value="Buscar CEP"  form="mainForm" actionListener="#{bean.addressBean.searchZipCode}" update="mainForm" style="margin-top:15px;margin-left:5px;width:120px;"></p:commandButton>
                             </p:outputPanel>
                             <p:messages for="msgSearchZipCode" showSummary="false"  showDetail="true" closable="true"/>
 
@@ -38,41 +39,46 @@
                         <p:panelGrid columns="4" columnClasses="ui-grid-col-3,ui-grid-col-3,ui-grid-col-3,ui-grid-col-3" layout="grid" styleClass="ui-panelgrid-blank">
 
                             <p:outputLabel for="inputStreet" value="Logradouro">
-                                <p:inputMask id="inputStreet" value="#{bean.address.street}"  placeholder="Digite o endereço"></p:inputMask>
+                                <p:inputMask id="inputStreet" value="#{bean.addressBean.address.street}"  placeholder="Digite o endereço"></p:inputMask>
                             </p:outputLabel>
                             <p:outputLabel for="inputNumber" value="Número">
-                                <p:inputMask id="inputNumber" value="#{bean.address.number}"  placeholder="Digite o endereço"></p:inputMask>
+                                <p:inputMask id="inputNumber" value="#{bean.addressBean.address.number}"  placeholder="Digite o endereço"></p:inputMask>
                             </p:outputLabel>
                             <p:outputLabel for="inputDistrict" value="Bairro">
-                                <p:inputMask id="inputDistrict" value="#{bean.address.district}"  placeholder="Digite o Bairro"></p:inputMask>
+                                <p:inputMask id="inputDistrict" value="#{bean.addressBean.address.district}"  placeholder="Digite o Bairro"></p:inputMask>
                             </p:outputLabel>
                             <p:outputLabel for="inputAdditional" value="Complemento">
-                                <p:inputMask id="inputAdditional" value="#{bean.address.additional}"  placeholder="Digite algum complemento"></p:inputMask>
+                                <p:inputMask id="inputAdditional" value="#{bean.addressBean.address.additional}"  placeholder="Digite algum complemento"></p:inputMask>
                             </p:outputLabel>
                         </p:panelGrid>
                         <p:panelGrid columns="4"  columnClasses="ui-grid-col-3,ui-grid-col-3,ui-grid-col-3" layout="grid" styleClass="ui-panelgrid-blank">
 
                             <p:outputLabel for="inputCity" value="Cidade">
-                                <p:inputMask id="inputCity" value="#{bean.address.city}"  placeholder="Digite a Cidade"></p:inputMask>
+                                <p:inputMask id="inputCity" value="#{bean.addressBean.address.city}"  placeholder="Digite a Cidade"></p:inputMask>
                             </p:outputLabel>
                             <p:outputLabel for="inputEstado" value="Estado">
-                                <p:inputMask id="inputEstado" value="#{bean.address.state}"  placeholder="Digite o Estado"></p:inputMask>
+                                <p:inputMask id="inputEstado" value="#{bean.addressBean.address.state}"  placeholder="Digite o Estado"></p:inputMask>
                             </p:outputLabel>
                             <p:outputLabel for="inputPais" value="País" id="lbInputPais">
-                                <p:inputMask id="inputPais" value="#{bean.address.country}"  placeholder="Digite o País"></p:inputMask>
+                                <p:inputMask id="inputPais" value="#{bean.addressBean.address.country}"  placeholder="Digite o País"></p:inputMask>
                             </p:outputLabel>
                             <p:outputPanel style="margin-top:15px;">
-                                <p:selectBooleanCheckbox id="cbFavorite" value="#{bean.mainAddress}" />
+                                <p:selectBooleanCheckbox id="cbFavorite" value="#{bean.addressBean.mainAddress}" />
                                 <h:outputText value="Principal" style="margin-left:5px;"/>
                             </p:outputPanel>
+                            <p:outputPanel>
+                            </p:outputPanel>
+                            <p:outputPanel>
+                            </p:outputPanel>
+                            <p:outputPanel>
+                            </p:outputPanel>
+                            <p:commandButton value="Adicionar" form=":mainForm"  id="btIncludeAddress" actionListener="#{bean.addressBean.includeAddress}" update="dataTableAddress panelForm" style="margin-top:15px;margin-left:0px;width:150px;float:right"  >
+                            </p:commandButton>
                         </p:panelGrid>
                     </p:outputPanel>
-                    <p:commandButton value="Adicionar" form=":mainForm"  id="btIncludeAddress" actionListener="#{bean.includeAddress}" update="dataTableAddress panelForm" style="margin-top:15px;margin-left:0px;width:150px;"  >
-<!-- mainForm:j_idt46:-->
-                    </p:commandButton>
 
                     <p:dataTable id="dataTableAddress"  scrollable="true" scrollHeight="100" var="address"  reflow="true"
-                                 value="#{bean.addressList}" editable="true" style="margin-bottom:20px"
+                                 value="#{bean.addressBean.addressList}" editable="true" style="margin-bottom:20px"
                                  widgetVar="dt" >
                         <f:facet name="header"  id="facetGridAddress">
                             <p:panelGrid  id="pgToggler">
@@ -80,8 +86,17 @@
                                 <p:columnToggler  id="columnToggler" datasource="dataTableAddress" width="100px" trigger="bttoggler" />
                             </p:panelGrid>
                         </f:facet>
-                        <p:ajax event="rowEdit" listener="#{bean.onAddresRowEdit}" />
-                        <p:ajax event="rowEditCancel" listener="#{bean.onAddresCancel}"/>
+                        <p:column style="width:32px"  toggleable="false">
+                            <p:cellEditor>
+                                <f:facet name="output">
+                                    <p:graphicImage  name="imagens/Favorite_Star_239.png"  rendered="#{address.main.equals('Y')}"/>
+                                </f:facet>
+                                <f:facet name="input">
+                                    <p:selectBooleanCheckbox value="#{address.favorite}">
+                                    </p:selectBooleanCheckbox>
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
                         <p:column headerText="Tipo">
                             <p:cellEditor>
                                 <f:facet name="output">
@@ -90,7 +105,7 @@
                                 <f:facet name="input">
                                     <p:selectOneMenu id="modelInput" value="#{address.type.name}" panelStyle="width:150px"
                                                      var="t" style="width:100%" filter="true" filterMatchMode="startsWith">
-                                        <f:selectItems value="#{bean.addressTypeList}" var="ad" itemLabel="#{ad.name}" itemValue="#{ad.id}" />
+                                        <f:selectItems value="#{bean.addressBean.addressTypeList}" var="ad" itemLabel="#{ad.name}" itemValue="#{ad.id}" />
 
                                         <p:column>
                                             <h:outputText value="#{t.name}" />
@@ -170,10 +185,14 @@
                             </p:cellEditor>
                         </p:column>
                         <p:column style="width:32px" width="32px" toggleable="false">
-                            <p:rowEditor update="dataTableAddress panelForm" />
+                            <p:rowEditor update="dataTableAddress panelForm">
+                                </p:rowEditor>
                         </p:column>
+                        <p:ajax event="rowEdit" listener="#{bean.addressBean.onAddresRowEdit(address)}"  oncomplete="updateRows()"  />
+                        <p:ajax event="rowEditCancel" listener="#{bean.addressBean.onAddresCancel}"/>
+
                         <p:column  style="width:32px" width="32px" toggleable="false" icon="ui-icon-trash">
-                            <p:commandButton actionListener="#{bean.removeAddress(address)}" icon="ui-icon-trash"  update="dataTableAddress mainForm:idTbViewCustomer:panelForm">
+                            <p:commandButton actionListener="#{bean.addressBean.removeAddress(address)}" icon="ui-icon-trash"  update="dataTableAddress mainForm:idTbViewCustomer:panelForm">
                                 <p:confirm header="Remover endereço" message="Deseja remover o endereço?" icon="ui-icon-trash" />
                             </p:commandButton>
                         </p:column>

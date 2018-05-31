@@ -6,77 +6,132 @@
         xmlns:f="http://java.sun.com/jsf/core"
         xmlns:jsf="http://xmlns.jcp.org/jsf"
         xmlns:p="http://primefaces.org/ui"
+        xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
         xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
     </h:head>
     <h:body>
         <div class="ui-fluid">
         <ui:composition id="compSearchClient">
-                <h3>Consulta de Clientes</h3>
+            <h3> Consulta de Clientes </h3>
                 <h:form id="formSearchClient">
-                <p:dataTable id="tblSearchClient" var="customer" value="#{customerBean.customersList}"
-                             paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                <p:dataTable id="tblSearchClient" var="customer" value="#{customerBean.customersList}" widgetVar="tblSearchClient"
+                             paginatorTemplate="{CurrentPageReport}   {PreviousPageLink} {PageLinks} {NextPageLink}"
+                             currentPageReportTemplate="{currentPage} de {totalPages}"
+                             filteredValue="#{customerBean.customersFilteredList}"
+                             paginatorPosition="bottom"
+                             emptyMessage="Não há registros!"
                              paginator="true" rows="10" style="margin-bottom:20px">
-<!--
-                    <f:facet name="{Exporters}" id="facetExp">
-                        <h:commandLink id="cl">
-                            <p:graphicImage name="/demo/images/excel.png" width="24"/>
-                            <p:dataExporter type="xls" target="tbl" fileName="cars" />
-                        </h:commandLink>
 
-                        <h:commandLink>
-                            <p:graphicImage name="/demo/images/pdf.png" width="24"/>
-                            <p:dataExporter type="pdf" target="tbl" fileName="cars"/>
-                        </h:commandLink>
+                    <f:facet name="header">
+                        <p:outputPanel style="overflow: auto;">
+                            <p:outputPanel style="float: left;">
+                                <h:outputText value="Pesquisar: " />
+                                <p:inputText id="globalFilter" onkeyup="PF('tblSearchClient').filter()" style="width:300px" placeholder="Digite o que precisa encontrar"/>
+                            </p:outputPanel>
+                            <p:outputPanel style="float: right;">
+                                <h:commandLink id="cl">
+                                    <p:graphicImage name="/imagens/Excel-32.png" width="24"/>
+                                    <p:dataExporter type="xls" target="tbl" fileName="Clientes" />
+                                </h:commandLink>
 
-                        <h:commandLink>
-                            <p:graphicImage name="/demo/images/csv.png" width="24"/>
-                            <p:dataExporter type="csv" target="tbl" fileName="cars" />
-                        </h:commandLink>
-
-                        <h:commandLink>
-                            <p:graphicImage name="/demo/images/xml.png" width="24"/>
-                            <p:dataExporter type="xml" target="tbl" fileName="cars" />
-                        </h:commandLink>
+                                <h:commandLink>
+                                    <p:graphicImage name="/imagens/pdf-icon-png.png" width="24"/>
+                                    <p:dataExporter type="pdf" target="tbl" fileName="Clientes"/>
+                                </h:commandLink>
+                            </p:outputPanel>
+                        </p:outputPanel>
                     </f:facet>
--->
+                    <f:facet name="paginatorBottomRight">
 
-                    <p:column>
+                    </f:facet>
+                    <p:column filterBy="#{customer.name}" filterMatchMode="contains">
                         <f:facet name="header">
                             <h:outputText value="Nome" />
                         </f:facet>
                         <h:outputText value="#{customer.name}" />
                     </p:column>
 
-                    <p:column>
+                    <p:column filterBy="#{customer.code}" filterMatchMode="contains">
                         <f:facet name="header">
                             <h:outputText value="Código" />
                         </f:facet>
                         <h:outputText value="#{customer.code}" />
                     </p:column>
 
-                    <p:column>
+                    <p:column filterBy="#{customer.note}" filterMatchMode="contains">
                         <f:facet name="header">
                             <h:outputText value="Referencia" />
                         </f:facet>
                         <h:outputText value="#{customer.note}" />
                     </p:column>
+                    <p:column filterBy="#{customer.email}" filterMatchMode="contains">
+                        <f:facet name="header">
+                            <h:outputText value="E-mail" />
+                        </f:facet>
+                        <h:outputText value="#{customer.email}" />
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Contato" />
+                        </f:facet>
+                        <ui:repeat var="cont" value="#{customer.contacts.toArray()}">
+                            <h:outputText value="#{cont.number}" rendered="#{cont.main == 'Y'}"/>
+                        </ui:repeat>
+                    </p:column>
+
+                    <p:column style="width:32px">
+                        <ui:repeat var="cont" value="#{customer.contacts.toArray()}">
+                            <p:link href="#{cont.linkWpp}" rendered="#{cont.linkWpp != null}" target="_blank">
+                                <p:graphicImage  name="imagens/whatsapp_icon-icons.com_53606.png"  rendered="#{cont.linkWpp != null}"/>
+                            </p:link>
+                        </ui:repeat>
+                    </p:column>
+
+                    <p:column style="width:80px">
+                        <p:commandButton value="Editar"
+                                         id="btEditCustomer"
+                                         style="margin-right:20px"
+                                         update="dlgNewCustomer"
+                                         actionListener="#{customerBean.editCustomer(customer)}"
+                                         oncomplete="PF('dlgNewCustomer').show();" />
+
+                    </p:column>
+
                 </p:dataTable>
 
             </h:form>
                 <p:outputPanel deferred="true" deferredMode="visible">
                     <p:commandButton value="Novo"  type="button" style="margin-right:20px"
-                                     onclick="PF('dlgNewCustomer').show();"></p:commandButton>
-                    <p:commandButton value="Importar"></p:commandButton>
+                                     onclick="PF('dlgNewCustomer').show();">
 
-                    <p:dialog header="Informações de Clientes" width="800px" stule="margin-top:10px;" widgetVar="dlgNewCustomer" id="dlgNewCustomer"
+                    </p:commandButton>
+                    <p:commandButton value="Importar" type="button" style="margin-right:20px"
+                                     onclick="PF('dlgImportCustomer').show();"></p:commandButton>
+
+                    <p:dialog header="Informações de Clientes" width="800px" style="margin-top:10px;" widgetVar="dlgNewCustomer" id="dlgNewCustomer"
                               modal="true" maximizable="true"
                               responsive="true"
                               closeOnEscape="true"
                               positionType="fixed"
                               position="top">
-                        <ui:include src="/customer/customer.xhtml"/>
+                        <ui:include src="/customer/customer.xhtml">
+                            <ui:param name="custBean" value="#{customerBean}" />
+                        </ui:include>
                     </p:dialog>
+
+                    <!-- p:dialog header="Importar Informações de Clientes" width="700px" style="margin-top:10px;" widgetVar="dlgImportCustomer" id="dlgImportCustomer"
+                              modal="true" maximizable="false"
+                              responsive="true"
+                              closeOnEscape="true"
+                              positionType="fixed"
+                              position="center">
+                        <ui:include src="/template/import/Import.xhtml">
+                            <ui:param name="custBean" value="#{customerBean}" />
+                            <ui:param name="typeImport" value="CUSTOMER" />
+                        </ui:include>
+                    </p:dialog -->
                 </p:outputPanel>
         </ui:composition>
         </div>
