@@ -43,6 +43,7 @@ public class CustomerBean extends BeanModel implements Serializable, Bean {
     private Customer customer;
     private CustomerBO customerBO;
     private boolean company;
+    private int tabIndex;
     public CustomerBean()
     {
     }
@@ -65,14 +66,18 @@ public class CustomerBean extends BeanModel implements Serializable, Bean {
 
 
     @Override
-    public void refreshStaticInformation() {
+    public void refreshStaticInformation()
+    {
         customersList = customerBO.getAll();
+        customersFilteredList = customersList.stream().collect(Collectors.toList());
     }
 
     @Override
     public void lastValidation() {
 
     }
+
+
     public void onChangePerson(ValueChangeEvent evt)
     {
         if(evt.getNewValue().toString().equals("J"))
@@ -125,6 +130,11 @@ public class CustomerBean extends BeanModel implements Serializable, Bean {
         addressBean.setAddressList(customer.getAddresses());
     }
 
+    private int sortByName(String name1, String name2)
+    {
+        return name1.compareToIgnoreCase(name2);
+
+    }
     private void resetVariables()
     {
         customer = new Customer();
@@ -180,5 +190,13 @@ public class CustomerBean extends BeanModel implements Serializable, Bean {
 
     public void setCustomersFilteredList(List<Customer> customersFilteredList) {
         this.customersFilteredList = customersFilteredList;
+    }
+
+    public int getTabIndex() {
+        return tabIndex;
+    }
+
+    public void setTabIndex(int tabIndex) {
+        this.tabIndex = tabIndex;
     }
 }

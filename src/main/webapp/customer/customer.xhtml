@@ -19,7 +19,7 @@
                         <ui:param name="bean" value="#{custBean}" />
                         <ui:param name="paramUpdate" value="mainForm formSearchClient:tblSearchClient" />
                     </ui:include>
-                    <p:tabView id="idTbViewCustomer">
+                    <p:tabView id="idTbViewCustomer" dynamic="true" cache="false">
                         <p:tab id="personal" title="Dados Pessoais">
                             <p:panel header="Dados Pessoais">
                                 <ui:include src="/customer/customerpersonal.xhtml">

@@ -15,9 +15,12 @@ import org.primefaces.component.datatable.DataTable;
 import org.primefaces.event.FlowEvent;
 import org.primefaces.event.RowEditEvent;
 
+import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.NoneScoped;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.flow.FlowScoped;
@@ -26,7 +29,7 @@ import java.util.*;
 
 @ManagedBean(name = "addressBean")
 @NoneScoped
-public class AddressBean extends BeanModel implements Serializable, Bean {
+public class AddressBean  implements Serializable, Bean {
 
 
     private Customer customer;
@@ -43,7 +46,54 @@ public class AddressBean extends BeanModel implements Serializable, Bean {
     }
 
 
-    @Override
+    protected final String MSG_ID_ADDRESS = "msgAddress";
+    protected final String MSG_ID_GROW_INDEX = "GrowMessage";
+    protected final String MSG_ID_CONTACT = "msgContact";
+    protected final String MSG_ID_IMPORT = "messageImport";
+
+
+
+    @PostConstruct
+    public void start()
+    {
+        init();
+        refreshStaticInformation();
+        lastValidation();
+    }
+
+
+    public void addMsgInfo(String componentID, String msg) {
+        FacesContext.getCurrentInstance().addMessage(componentID, new FacesMessage(FacesMessage.SEVERITY_INFO, "Informação", msg));
+    }
+    public void addMsgWarn(String componentID,String msg) {
+        FacesContext.getCurrentInstance().addMessage(componentID, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso!", msg));
+    }
+
+    public void addMsgError(String componentID,String msg) {
+        FacesContext.getCurrentInstance().addMessage(componentID, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", msg));
+    }
+
+    public void addMsgFatal(String componentID,String msg) {
+        FacesContext.getCurrentInstance().addMessage(componentID, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Erro Fatal!", msg));
+    }
+    public void addMsgInfo(String msg) {
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Informação", msg));
+    }
+
+    public void addMsgWarn(String msg) {
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso!", msg));
+    }
+
+    public void addMsgError(String msg) {
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", msg));
+    }
+
+    public void addMsgFatal(String msg) {
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Erro Fatal!", msg));
+    }
+
+
+
     public void init() {
         daoAddressType = new AddressTypeDAO();
         customer = new Customer();
@@ -81,15 +131,12 @@ public class AddressBean extends BeanModel implements Serializable, Bean {
         address = new Address();
     }
 
-
-    @Override
     public void refreshStaticInformation() {
         AddressTypeDAO Adddao = new AddressTypeDAO();
 
         addressTypeList =Adddao.findAll();
     }
 
-    @Override
     public void lastValidation() {
         if(addressList.size() == 0)
         {
@@ -137,9 +184,9 @@ public class AddressBean extends BeanModel implements Serializable, Bean {
     }
 
 
-    public void onAddresRowEdit(Address event)
+    public void onAddressRowEdit(RowEditEvent event)
     {
-        Address adr = (Address) event;//.getObject();
+        Address adr = (Address) event.getObject();
 
         adr.getType().getId();
         try
@@ -182,19 +229,19 @@ public class AddressBean extends BeanModel implements Serializable, Bean {
             if(address == null)
             {
                 address = new Address();
-                addMsgError("msgSearchZipCode","CEP não encontrado!");
+                addMsgError(MSG_ID_ADDRESS,"CEP não encontrado!");
             }else {
-                addMsgInfo("msgSearchZipCode","CEP encontrado!");
+                addMsgInfo(MSG_ID_ADDRESS,"CEP encontrado!");
             }
         }else
         {
-            addMsgWarn("msgSearchZipCode","Digite o CEP para pesquisar");
+            addMsgWarn(MSG_ID_ADDRESS,"Digite o CEP para pesquisar");
 
         }
     }
 
     public void onAddresCancel(RowEditEvent event) {
-
+int y =0;
     }
 
     @Override

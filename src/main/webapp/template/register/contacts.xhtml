@@ -54,10 +54,14 @@
                 </p:outputPanel>
                 <p:dataTable id="dataTableContacts" var="contact"  reflow="true" scrollable="true" scrollHeight="100"
                              value="#{bean.contactBean.contactList}" editable="true" style="margin-bottom:20px" widgetVar="dt"
-                             >
+                             emptyMessage="Não há registros!">
+                    <p:ajax event="rowEdit"
+                            listener="#{bean.contactBean.onContactRowEdit(contact)}"
+                            update="dataTableContacts  mainForm:idTbViewCustomer:idmsgContact"
+                            oncomplete="updateRows()"/>
 
-                    <!--p:ajax event="rowEdit"   listener="#{bean.contactBean.onContactRowEdit(contact)}" oncomplete="updateRows()" update="dataTableContacts  mainForm:idTbViewCustomer:idmsgContact"  />
-                    <p:ajax event="rowEditCancel" listener="#{bean.contactBean.onContactCancel}"/-->
+                    <p:ajax event="rowEditCancel"
+                            listener="#{bean.contactBean.onContactCancel}"/>
                     <p:column style="width:32px">
                         <p:cellEditor>
                             <f:facet name="output">
@@ -111,9 +115,9 @@
                             <p:graphicImage  name="imagens/whatsapp_icon-icons.com_53606.png"  rendered="#{contact.linkWpp != null}"/>
                         </p:link>
                     </p:column>
-                    <!--p:column style="width:32px"  icon="ui-icon-check">
+                    <p:column style="width:32px"  icon="ui-icon-check">
                         <p:rowEditor update="dataTableContacts mainForm:idTbViewCustomer:panelFormContact"/>
-                    </p:column-->
+                    </p:column>
                     <p:column style="width:32px" width="32px" icon="ui-icon-trash">
                         <p:commandButton actionListener="#{bean.contactBean.removeContact(contact)}" icon="ui-icon-trash"  update="dataTableContacts mainForm:idTbViewCustomer:panelFormContact">
                             <p:confirm header="Remover contato" message="Deseja remover o contato?" icon="ui-icon-trash" />

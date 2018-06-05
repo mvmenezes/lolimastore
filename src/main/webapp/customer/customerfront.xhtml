@@ -45,7 +45,7 @@
                     <f:facet name="paginatorBottomRight">
 
                     </f:facet>
-                    <p:column filterBy="#{customer.name}" filterMatchMode="contains">
+                    <p:column sortBy="#{customer.name}" filterBy="#{customer.name}" filterMatchMode="contains" sortFunction="#{customer.sortByName}">
                         <f:facet name="header">
                             <h:outputText value="Nome" />
                         </f:facet>
@@ -90,13 +90,8 @@
                     </p:column>
 
                     <p:column style="width:80px">
-                        <p:commandButton value="Editar"
-                                         id="btEditCustomer"
-                                         style="margin-right:20px"
-                                         update="dlgNewCustomer"
-                                         actionListener="#{customerBean.editCustomer(customer)}"
-                                         oncomplete="PF('dlgNewCustomer').show();" />
-
+                        <p:commandButton value="Editar"  style="margin-right:20px" update="dlgNewCustomer"
+                                         actionListener="#{customerBean.editCustomer(customer)}" oncomplete="PF('dlgNewCustomer').show();"></p:commandButton>
                     </p:column>
 
                 </p:dataTable>
@@ -111,7 +106,7 @@
                                      onclick="PF('dlgImportCustomer').show();"></p:commandButton>
 
                     <p:dialog header="Informações de Clientes" width="800px" style="margin-top:10px;" widgetVar="dlgNewCustomer" id="dlgNewCustomer"
-                              modal="true" maximizable="true"
+                              modal="true" maximizable="false"
                               responsive="true"
                               closeOnEscape="true"
                               positionType="fixed"
@@ -121,7 +116,7 @@
                         </ui:include>
                     </p:dialog>
 
-                    <!-- p:dialog header="Importar Informações de Clientes" width="700px" style="margin-top:10px;" widgetVar="dlgImportCustomer" id="dlgImportCustomer"
+                    <p:dialog header="Importar Informações de Clientes" width="700px" style="margin-top:10px;" widgetVar="dlgImportCustomer" id="dlgImportCustomer"
                               modal="true" maximizable="false"
                               responsive="true"
                               closeOnEscape="true"
@@ -131,7 +126,7 @@
                             <ui:param name="custBean" value="#{customerBean}" />
                             <ui:param name="typeImport" value="CUSTOMER" />
                         </ui:include>
-                    </p:dialog -->
+                    </p:dialog>
                 </p:outputPanel>
         </ui:composition>
         </div>

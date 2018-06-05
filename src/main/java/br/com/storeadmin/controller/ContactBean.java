@@ -19,7 +19,7 @@ import java.util.*;
 
 @ManagedBean(name = "contactBean")
 @NoneScoped
-public class ContactBean extends BeanModel implements Serializable, Bean {
+public class ContactBean implements Serializable, Bean {
 
 
     private Customer customer;
@@ -35,8 +35,6 @@ public class ContactBean extends BeanModel implements Serializable, Bean {
         init();
     }
 
-
-    /***************************************************************************************************************
 
     protected final String MSG_ID_ADDRESS = "msgAddress";
     protected final String MSG_ID_GROW_INDEX = "GrowMessage";
@@ -85,9 +83,6 @@ public class ContactBean extends BeanModel implements Serializable, Bean {
     }
 
 
-    /***************************************************************************************************************/
-
-    @Override
     public void init() {
         daoContactType = new ContactTypeDAO();
         customer = new Customer();
@@ -100,7 +95,7 @@ public class ContactBean extends BeanModel implements Serializable, Bean {
 
 
 
-    @Override
+
     public void refreshStaticInformation() {
         AddressTypeDAO Adddao = new AddressTypeDAO();
         ContactTypeDAO contDAO = new ContactTypeDAO();
@@ -117,7 +112,6 @@ public class ContactBean extends BeanModel implements Serializable, Bean {
         contactTypeList =contDAO.findAllList();
     }
 
-    @Override
     public void lastValidation() {
         if(contactList.size() == 0)
         {
@@ -160,7 +154,7 @@ public class ContactBean extends BeanModel implements Serializable, Bean {
 
 
 
-    public void onContactRowEdit2(Contact event) {
+    public void onContactRowEdit(Contact event) {
 
         Contact cont = (Contact) event;//.getObject();
         cont.getType().getId();
@@ -221,7 +215,7 @@ public class ContactBean extends BeanModel implements Serializable, Bean {
         addMsgInfo(MSG_ID_CONTACT,"Contato removido com sucesso!");
     }
     public void onContactCancel(RowEditEvent event) {
-
+        int u = 0;
     }
 
     @Override

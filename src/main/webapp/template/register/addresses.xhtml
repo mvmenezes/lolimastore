@@ -33,7 +33,10 @@
                                 </p:outputLabel>
                                 <p:commandButton type="submit" id="btSearchZipCode"  value="Buscar CEP"  form="mainForm" actionListener="#{bean.addressBean.searchZipCode}" update="mainForm" style="margin-top:15px;margin-left:5px;width:120px;"></p:commandButton>
                             </p:outputPanel>
-                            <p:messages for="msgSearchZipCode" showSummary="false"  showDetail="true" closable="true"/>
+                            <p:outputPanel style="margin-top:15px;">
+                                <p:selectBooleanCheckbox id="cbFavorite" value="#{bean.addressBean.mainAddress}" />
+                                <h:outputText value="Marcar como endereço principal" style="margin-left:5px;"/>
+                            </p:outputPanel>
 
                         </p:panelGrid>
                         <p:panelGrid columns="4" columnClasses="ui-grid-col-3,ui-grid-col-3,ui-grid-col-3,ui-grid-col-3" layout="grid" styleClass="ui-panelgrid-blank">
@@ -62,24 +65,29 @@
                             <p:outputLabel for="inputPais" value="País" id="lbInputPais">
                                 <p:inputMask id="inputPais" value="#{bean.addressBean.address.country}"  placeholder="Digite o País"></p:inputMask>
                             </p:outputLabel>
-                            <p:outputPanel style="margin-top:15px;">
-                                <p:selectBooleanCheckbox id="cbFavorite" value="#{bean.addressBean.mainAddress}" />
-                                <h:outputText value="Principal" style="margin-left:5px;"/>
+                            <p:outputPanel>
+                                <p:commandButton value="Adicionar" form=":mainForm"  id="btIncludeAddress" actionListener="#{bean.addressBean.includeAddress}" update="dataTableAddress panelForm" style="margin-top:15px;margin-left:0px;width:150px;float:right"  >
+                                </p:commandButton>
                             </p:outputPanel>
                             <p:outputPanel>
                             </p:outputPanel>
                             <p:outputPanel>
                             </p:outputPanel>
-                            <p:outputPanel>
-                            </p:outputPanel>
-                            <p:commandButton value="Adicionar" form=":mainForm"  id="btIncludeAddress" actionListener="#{bean.addressBean.includeAddress}" update="dataTableAddress panelForm" style="margin-top:15px;margin-left:0px;width:150px;float:right"  >
-                            </p:commandButton>
                         </p:panelGrid>
                     </p:outputPanel>
 
                     <p:dataTable id="dataTableAddress"  scrollable="true" scrollHeight="100" var="address"  reflow="true"
                                  value="#{bean.addressBean.addressList}" editable="true" style="margin-bottom:20px"
+                                 emptyMessage="Não há registros!"
                                  widgetVar="dt" >
+                        <!--oncomplete="updateRows()-->
+                        <p:ajax event="rowEdit"
+                                listener="#{bean.addressBean.onAddressRowEdit}"
+                                oncomplete="updateRows()"/>
+
+                        <p:ajax event="rowEditCancel"
+                                listener="#{bean.addressBean.onAddresCancel}"/>
+
                         <f:facet name="header"  id="facetGridAddress">
                             <p:panelGrid  id="pgToggler">
                                 <p:commandButton id="bttoggler" type="button" width="100px" value="Colunas" style="float:right;width:100px" icon="ui-icon-calculator" />
@@ -185,11 +193,8 @@
                             </p:cellEditor>
                         </p:column>
                         <p:column style="width:32px" width="32px" toggleable="false">
-                            <p:rowEditor update="dataTableAddress panelForm">
-                                </p:rowEditor>
+                            <p:rowEditor />
                         </p:column>
-                        <p:ajax event="rowEdit" listener="#{bean.addressBean.onAddresRowEdit(address)}"  oncomplete="updateRows()"  />
-                        <p:ajax event="rowEditCancel" listener="#{bean.addressBean.onAddresCancel}"/>
 
                         <p:column  style="width:32px" width="32px" toggleable="false" icon="ui-icon-trash">
                             <p:commandButton actionListener="#{bean.addressBean.removeAddress(address)}" icon="ui-icon-trash"  update="dataTableAddress mainForm:idTbViewCustomer:panelForm">
