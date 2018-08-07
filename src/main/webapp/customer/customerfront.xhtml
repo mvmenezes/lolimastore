@@ -15,13 +15,15 @@
         <ui:composition id="compSearchClient">
             <h3> Consulta de Clientes </h3>
                 <h:form id="formSearchClient">
-                <p:dataTable id="tblSearchClient" var="customer" value="#{customerBean.customersList}" widgetVar="tblSearchClient"
-                             paginatorTemplate="{CurrentPageReport}   {PreviousPageLink} {PageLinks} {NextPageLink}"
+                <p:dataTable id="tblSearchClient" var="customer"
+                             value="#{customerBean.customersList}"
+                             widgetVar="tblSearchClient"
+                             paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {NextPageLink}"
                              currentPageReportTemplate="{currentPage} de {totalPages}"
                              filteredValue="#{customerBean.customersFilteredList}"
                              paginatorPosition="bottom"
                              emptyMessage="Não há registros!"
-                             paginator="true" rows="10" style="margin-bottom:20px">
+                             paginator="true" rows="5" style="margin-bottom:20px">
 
                     <f:facet name="header">
                         <p:outputPanel style="overflow: auto;">
@@ -45,14 +47,14 @@
                     <f:facet name="paginatorBottomRight">
 
                     </f:facet>
-                    <p:column sortBy="#{customer.name}" filterBy="#{customer.name}" filterMatchMode="contains" sortFunction="#{customer.sortByName}">
+                    <p:column filterBy="#{customer.name}" filterMatchMode="contains" >
                         <f:facet name="header">
                             <h:outputText value="Nome" />
                         </f:facet>
                         <h:outputText value="#{customer.name}" />
                     </p:column>
 
-                    <p:column filterBy="#{customer.code}" filterMatchMode="contains">
+                    <p:column  filterBy="#{customer.code}" filterMatchMode="contains">
                         <f:facet name="header">
                             <h:outputText value="Código" />
                         </f:facet>

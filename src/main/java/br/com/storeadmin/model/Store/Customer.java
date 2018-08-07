@@ -28,9 +28,9 @@ public class Customer extends Person implements Serializable {
     @Column(name="CTM_EMAIL")
     private String email;
 
-    @OneToMany(fetch = FetchType.EAGER , mappedBy = "customer", cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
+    @OneToMany(fetch = FetchType.EAGER , mappedBy = "customer", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE, CascadeType.REFRESH})
     private Set<Contact> contacts;
-    @OneToMany(fetch = FetchType.EAGER , mappedBy = "customer", cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
+    @OneToMany(fetch = FetchType.EAGER , mappedBy = "customer", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE, CascadeType.REFRESH})
     private Set<Address> addresses;
 
     @Column(name="CTM_INSTAGRAM")

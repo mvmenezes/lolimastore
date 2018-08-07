@@ -11,6 +11,7 @@ import br.com.storeadmin.model.EnumModel.EGender;
 import br.com.storeadmin.model.EnumModel.EStoreAttribute;
 import br.com.storeadmin.model.EnumModel.EYesNo;
 import br.com.storeadmin.model.Store.*;
+import br.com.storeadmin.util.StoreUtil;
 import org.primefaces.PrimeFaces;
 import org.primefaces.component.datatable.DataTable;
 import org.primefaces.context.RequestContext;
@@ -44,32 +45,39 @@ public class CustomerBean extends BeanModel implements Serializable, Bean {
     private CustomerBO customerBO;
     private boolean company;
     private int tabIndex;
+    private DataTable dataTableCustomers;
+
     public CustomerBean()
     {
     }
 
 
     @Override
-    public void init() {
+    public void init()
+    {
         customerBO = new CustomerBO();
         customer = new Customer();
         customersList = new HashSet<Customer>();
         customersFilteredList = new ArrayList<Customer>();
         String s = EGender.MALE;
         customer.setType("F");
-          }
-
-
-    public void insertCustomer() {
-        int i = 0;
     }
+
+
 
 
     @Override
     public void refreshStaticInformation()
     {
-        customersList = customerBO.getAll();
-        customersFilteredList = customersList.stream().collect(Collectors.toList());
+        List<Customer> lista = customerBO.getAll().stream().collect(Collectors.toList());
+
+
+        Collections.sort(lista, (o1, o2) -> o1.getName().compareTo(o2.getName()));
+        customersList = lista.stream().collect(Collectors.toSet());
+        customersFilteredList = lista;
+
+        PrimeFaces.current().ajax().update("formSearchClient:tblSearchClient");
+
     }
 
     @Override
@@ -108,6 +116,7 @@ public class CustomerBean extends BeanModel implements Serializable, Bean {
             resetVariables();
             addMsgInfo(MSG_ID_GROW_INDEX,"Cliente inserido com sucesso!");
             refreshStaticInformation();
+            PrimeFaces.current().executeScript("PF('dlgNewCustomer').hide();");
         }
         catch (Exception erro)
         {
@@ -125,7 +134,7 @@ public class CustomerBean extends BeanModel implements Serializable, Bean {
 
     }
     public void editCustomer(Customer customer) {
-        this.customer = customer;
+        this.customer = customerBO.findById(customer.getId());
         contactBean.setContactList(customer.getContacts());
         addressBean.setAddressList(customer.getAddresses());
     }
@@ -198,5 +207,17 @@ public class CustomerBean extends BeanModel implements Serializable, Bean {
 
     public void setTabIndex(int tabIndex) {
         this.tabIndex = tabIndex;
+    }
+
+    public CustomerBO getCustomerBO() {
+        return customerBO;
+    }
+
+    public DataTable getDataTableCustomers() {
+        return dataTableCustomers;
+    }
+
+    public void setDataTableCustomers(DataTable dataTableCustomers) {
+        this.dataTableCustomers = dataTableCustomers;
     }
 }

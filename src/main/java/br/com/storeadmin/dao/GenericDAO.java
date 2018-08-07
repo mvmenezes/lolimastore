@@ -21,7 +21,6 @@ public abstract class GenericDAO < T extends Serializable> {
 	
 	protected EntityManager getEntityManager()
 	{
-		
 		return JPAUtil.getInstance().getEntityManager();
 	}
 
@@ -40,11 +39,9 @@ public abstract class GenericDAO < T extends Serializable> {
 		manager.getTransaction().commit();
 		}catch(Exception erro)
 		{
+			erro.printStackTrace();;
+			manager.getTransaction().rollback();
 			throw new Exception(erro.getMessage());
-		}finally {
-			if (manager.getTransaction().isActive())
-				manager.getTransaction().rollback();
-			manager.close();
 		}
 		
 	}		
@@ -64,11 +61,7 @@ public abstract class GenericDAO < T extends Serializable> {
 		}catch(Exception erro)
 		{
 			System.out.println(erro.getMessage());
-		}finally {
-			if (manager.getTransaction().isActive())
-				manager.getTransaction().rollback();
-			if (manager.isOpen())
-				manager.close();
+			manager.getTransaction().rollback();
 		}
 	}	
 	public void saveMaster(T entity)
@@ -88,16 +81,11 @@ public abstract class GenericDAO < T extends Serializable> {
 			manager.getTransaction().begin();
 			manager.merge(entity);
 			manager.getTransaction().commit();
-			manager.close();
 		
 		}catch(Exception erro)
 		{
 			System.out.println(erro.getMessage());
-		}finally {
-			if (manager.getTransaction().isActive())
-				manager.getTransaction().rollback();
-			if (manager.isOpen())
-				manager.close();
+			manager.getTransaction().rollback();
 		}
 	}
 
@@ -114,16 +102,11 @@ public abstract class GenericDAO < T extends Serializable> {
 				entity = manager.merge(entity);
 			manager.remove(entity);
 			manager.getTransaction().commit();
-			manager.close();
 		
 		}catch(Exception erro)
 		{
 			System.out.println(erro.getMessage());
-		}finally {
-			if (manager.getTransaction().isActive())
-				manager.getTransaction().rollback();
-			if (manager.isOpen())
-				manager.close();
+			manager.getTransaction().rollback();
 		}
 	}
 
@@ -134,8 +117,6 @@ public abstract class GenericDAO < T extends Serializable> {
 		try
 		{
 			manager = getEntityManager();
-			manager.getTransaction().begin();
-	
 			Query query = manager.createQuery(jpql);
 			
 			for (int i = 0; i < params.length; i++) {
@@ -144,18 +125,12 @@ public abstract class GenericDAO < T extends Serializable> {
 			
 			
 			List<T> entities = query.getResultList();
-			manager.getTransaction().commit();
-
 			return entities;
 		}catch(Exception erro)
 		{
 			System.out.println(erro.getMessage());
+			manager.getTransaction().rollback();
 			return null;
-		}finally {
-			if (manager.getTransaction().isActive())
-				manager.getTransaction().rollback();
-			if (manager.isOpen())
-				manager.close();
 		}
 		
 	}
@@ -166,27 +141,17 @@ public abstract class GenericDAO < T extends Serializable> {
 		try
 		{
 			manager = getEntityManager();
-			manager.getTransaction().begin();
-	
 			Query query = manager.createQuery(jpql);
 			
 			for (int i = 0; i < params.length; i++) {
 				query.setParameter(i+1, params[i]);
 			}
-			
-			
 			T entities = (T) query.getSingleResult();
-			manager.getTransaction().commit();
 			return entities;
 		}catch(Exception erro)
 		{
 			System.out.println(erro.getMessage());
 			return null;
-		}finally {
-			if (manager.getTransaction().isActive())
-				manager.getTransaction().rollback();
-			if (manager.isOpen())
-				manager.close();
 		}
 	}
 	@SuppressWarnings("unchecked")
@@ -196,22 +161,14 @@ public abstract class GenericDAO < T extends Serializable> {
 		try
 		{
 			manager = getEntityManager();
-			manager.getTransaction().begin();
-	
 			Query query = manager.createQuery("from "+ aClass.getSimpleName() + "p "+ jpql);
-			
 			List<T> entities = query.getResultList();
-			manager.getTransaction().commit();
 			return entities;
 		}catch(Exception erro)
 		{
+			manager.getTransaction().rollback();
 			System.out.println(erro.getMessage());
 			return null;
-		}finally {
-			if (manager.getTransaction().isActive())
-				manager.getTransaction().rollback();
-			if (manager.isOpen())
-				manager.close();
 		}
 		
 	}
@@ -221,19 +178,13 @@ public abstract class GenericDAO < T extends Serializable> {
 		try
 		{
 			manager  = getEntityManager();
-			manager.getTransaction().begin();
 			T entity = (T) manager.find(aClass, id);
-			manager.getTransaction().commit();
 			return entity;
 		}catch(Exception erro)
 		{
 			System.out.println(erro.getMessage());
+			manager.getTransaction().rollback();
 			return null;
-		}finally {
-			if (manager.getTransaction().isActive())
-				manager.getTransaction().rollback();
-			if (manager.isOpen())
-				manager.close();
 		}
 	}
 	
@@ -244,22 +195,15 @@ public abstract class GenericDAO < T extends Serializable> {
 		try
 		{
 			manager = getEntityManager();
-			manager.getTransaction().begin();
-
 			Query query = manager.createQuery("from "+ aClass.getSimpleName());
 			Set<T> entities = new HashSet<T>();
 			entities.addAll(query.getResultList());
-			manager.getTransaction().commit();
 			return entities;
 		}catch(Exception erro)
 		{
 			System.out.println(erro.getMessage());
+			manager.getTransaction().rollback();
 			return null;
-		}finally {
-			if (manager.getTransaction().isActive())
-				manager.getTransaction().rollback();
-			if (manager.isOpen())
-				manager.close();
 		}
 	}
 
@@ -269,21 +213,13 @@ public abstract class GenericDAO < T extends Serializable> {
 		try
 		{
 			manager = getEntityManager();
-			manager.getTransaction().begin();
-
 			Query query = manager.createQuery("from "+ aClass.getSimpleName());
 			List<T> entities =query.getResultList();
-			manager.getTransaction().commit();
 			return entities;
 		}catch(Exception erro)
 		{
 			System.out.println(erro.getMessage());
 			return null;
-		}finally {
-			if (manager.getTransaction().isActive())
-				manager.getTransaction().rollback();
-			if (manager.isOpen())
-				manager.close();
 		}
 	}
 }

@@ -121,13 +121,18 @@ public class AddressBean  implements Serializable, Bean {
         address.setFavorite(mainAddress);
         address.setCustomer(customer);
         mainAddress =false;
-
         addressList.add(address);
-
-
         customer.setAddresses(addressList);
-        addMsgInfo(MSG_ID_ADDRESS,"Endereço adicionado com sucesso!");
 
+        // Se o evento estiver nulo é pq é a entrada do metodo editar
+        if(e != null) {
+            try {
+               // addressBO.save(address);
+                addMsgInfo(MSG_ID_ADDRESS, "Endereço adicionado com sucesso!");
+            } catch (Exception erro) {
+                int r = 3;
+            }
+        }
         address = new Address();
     }
 
@@ -198,7 +203,7 @@ public class AddressBean  implements Serializable, Bean {
             }
             addMsgInfo(MSG_ID_ADDRESS,"Endereço alterado com sucesso!");
             mainAddress = false;
-        }catch(IndexOutOfBoundsException exp)
+        }catch(Exception exp)
         {
             addMsgError(MSG_ID_ADDRESS,"Não foi possível alterar o Endereço!");
         }

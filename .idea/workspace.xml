@@ -2,18 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a38a493d-72e9-467b-b40d-e462e7fe0e95" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/util/StoreUtil.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/CustomerBO.java" afterPath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/CustomerBO.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/AddressBean.java" afterPath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/AddressBean.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/ContactBean.java" afterPath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/ContactBean.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/CustomerBean.java" afterPath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/CustomerBean.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/AddressDAO.java" afterPath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/AddressDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java" afterPath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Address.java" afterPath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Address.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Contact.java" afterPath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Contact.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Customer.java" afterPath="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Customer.java" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/customer/customer.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/customer/customer.xhtml" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/customer/customerfront.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/customer/customerfront.xhtml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/register/addresses.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/template/register/addresses.xhtml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/register/contacts.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/template/register/contacts.xhtml" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/menu/upmenu.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/template/menu/upmenu.xhtml" />
       <change beforePath="$PROJECT_DIR$/target/lolimastore-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/lolimastore-1.0-SNAPSHOT.war" />
-      <change beforePath="$PROJECT_DIR$/target/lolimastore-1.0-SNAPSHOT/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/lolimastore-1.0-SNAPSHOT/WEB-INF/web.xml" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,23 +35,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CustomerBean.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/CustomerBean.java">
+      <file leaf-file-name="StoreUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/util/StoreUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="134" column="15" lean-forward="false" selection-start-line="134" selection-start-column="15" selection-end-line="134" selection-end-column="15" />
-              <folding />
+            <state relative-caret-position="187">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addresses.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/template/register/addresses.xhtml">
+      <file leaf-file-name="customerfront.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/customer/customerfront.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="37" column="74" lean-forward="false" selection-start-line="37" selection-start-column="74" selection-end-line="37" selection-end-column="74" />
+            <state relative-caret-position="272">
+              <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="44" />
               <folding>
-                <element signature="n#style#0;n#p:dataTable#0;n#div#0;n#p:outputPanel#0;n#ui:composition#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p:dataTable#0;n#h:form#0;n#ui:composition#0;n#div#0;n#h:body#0;n#h:html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,57 +62,38 @@
       <file leaf-file-name="customer.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/customer/customer.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="21" column="80" lean-forward="false" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
+            <state relative-caret-position="782">
+              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customerfront.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/customer/customerfront.xhtml">
+      <file leaf-file-name="CustomerDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/CustomerDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="47" column="146" lean-forward="false" selection-start-line="47" selection-start-column="136" selection-end-line="47" selection-end-column="146" />
+            <state relative-caret-position="170">
+              <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerBean.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/CustomerBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="75" column="54" lean-forward="true" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
               <folding>
-                <element signature="n#style#0;n#p:outputPanel#0;n#p:outputPanel#0;n#f:facet#0;n#p:dataTable#0;n#h:form#0;n#ui:composition#0;n#div#0;n#h:body#0;n#h:html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p:column#6;n#p:dataTable#0;n#h:form#0;n#ui:composition#0;n#div#0;n#h:body#0;n#h:html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p:commandButton#0;n#p:column#6;n#p:dataTable#0;n#h:form#0;n#ui:composition#0;n#div#0;n#h:body#0;n#h:html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p:commandButton#1;n#p:outputPanel#0;n#ui:composition#0;n#div#0;n#h:body#0;n#h:html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p:dialog#1;n#p:outputPanel#0;n#ui:composition#0;n#div#0;n#h:body#0;n#h:html#0;n#!!top" expanded="true" />
+                <element signature="e#4312#4313#0" expanded="true" />
+                <element signature="e#4343#4344#0" expanded="true" />
+                <element signature="e#5490#5491#0" expanded="true" />
+                <element signature="e#5523#5524#0" expanded="true" />
+                <element signature="e#5571#5572#0" expanded="true" />
+                <element signature="e#5612#5613#0" expanded="true" />
+                <element signature="e#5683#5684#0" expanded="true" />
+                <element signature="e#5743#5744#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contacts.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/template/register/contacts.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="56" column="62" lean-forward="false" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
-              <folding>
-                <element signature="n#style#0;n#p:column#5;n#p:dataTable#0;n#div#0;n#p:outputPanel#0;n#ui:composition#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContactBean.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/ContactBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="149" column="33" lean-forward="false" selection-start-line="149" selection-start-column="19" selection-end-line="149" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddressBean.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/AddressBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="237" column="37" lean-forward="false" selection-start-line="237" selection-start-column="37" selection-end-line="237" selection-end-column="37" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -121,16 +110,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>setma</find>
-      <find>action</find>
-      <find>act</find>
-      <find>CTT_ID</find>
-      <find>typeContactID</find>
-      <find>ed</find>
-      <find>p:ajax</find>
-      <find>onContactRowEdit</find>
-      <find>cont</find>
-      <find>&quot;bean&quot;</find>
       <find>customerBean</find>
       <find>contactList</find>
       <find>editCustomer</find>
@@ -151,6 +130,16 @@
       <find>ajax</find>
       <find>onContactRowEdit2</find>
       <find>importBean.upload</find>
+      <find>close</find>
+      <find>fin</find>
+      <find>includeAddress</find>
+      <find>CascadeType.ALL</find>
+      <find>manager.close();</find>
+      <find>begin</find>
+      <find>resetVariables</find>
+      <find>sortByName</find>
+      <find>sortOrder</find>
+      <find>upda</find>
     </findStrings>
     <replaceStrings>
       <replace>g</replace>
@@ -183,8 +172,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Common/ColumnModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/MenuBean.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" />
         <option value="$PROJECT_DIR$/src/main/java/LifeCycleListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Common/LifeCycleListener.java" />
@@ -198,7 +185,6 @@
         <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/ContactType.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/AddressType.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/template/menu/upmenu.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/EnumModel/EYesNo.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/BeanApplication.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/contacts.js" />
@@ -206,14 +192,9 @@
         <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/GenericBO.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/ProductBean.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Address.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Customer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Contact.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/CustomerDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/ContactDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/AddressDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/ContactBO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/customer/customerpersonal.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/BeanModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/EnumModel/TypeImport.java" />
@@ -223,16 +204,24 @@
         <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/AddressTypeBO.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/ContactTypeBO.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/ImportBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/CustomerBO.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/ContactBean.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/template/import/Import.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/addresses.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/customer/customer.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/AddressBean.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/template/register/addresses.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/template/register/contacts.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Contact.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/ContactBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Address.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Customer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/AddressDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/JPAUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/AddressBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/CustomerBO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/customer/customer.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/customer/customerfront.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/template/menu/upmenu.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/util/StoreUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/CustomerBean.java" />
       </list>
     </option>
@@ -301,6 +290,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -350,22 +343,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="storeadmin" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lolimastore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lolimastore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lolimastore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lolimastore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lolimastore" type="b2602c69:ProjectViewProjectNode" />
@@ -373,31 +351,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lolimastore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lolimastore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="customer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lolimastore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lolimastore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lolimastore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lolimastore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lolimastore" type="b2602c69:ProjectViewProjectNode" />
@@ -406,15 +359,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="template" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lolimastore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lolimastore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-              <item name="import" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lolimastore" type="b2602c69:ProjectViewProjectNode" />
@@ -434,26 +378,10 @@
               <item name="template" type="462c0819:PsiDirectoryNode" />
               <item name="register" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="lolimastore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lolimastore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lolimastore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -464,8 +392,12 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="br.com.storeadmin.controller" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projetos\MVS\lolimastore\src\main\webapp\resources\template" />
+      <recent name="E:\Projetos\MVS\lolimastore\src\main\webapp\resources\imagens" />
+      <recent name="E:\Projetos\MVS\lolimastore\src\main\webapp\template" />
+      <recent name="E:\Projetos\MVS\lolimastore\src\main\webapp\customer" />
+      <recent name="E:\Projetos\MVS\lolimastore\src\main\webapp\resources" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Projetos\MVS\lolimastore\src\main\webapp\template\import" />
@@ -481,12 +413,8 @@
       <recent name="br.com.storeadmin.model.Store" />
       <recent name="br.com.storeadmin.model.EnumModel" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Projetos\MVS\lolimastore\src\main\webapp\resources\template" />
-      <recent name="E:\Projetos\MVS\lolimastore\src\main\webapp\resources\imagens" />
-      <recent name="E:\Projetos\MVS\lolimastore\src\main\webapp\template" />
-      <recent name="E:\Projetos\MVS\lolimastore\src\main\webapp\customer" />
-      <recent name="E:\Projetos\MVS\lolimastore\src\main\webapp\resources" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.com.storeadmin.controller" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -683,25 +611,25 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39901477" sideWeight="0.5173979" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35303777" sideWeight="0.48260212" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35303777" sideWeight="0.48260212" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2624811" sideWeight="0.47969544" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30181542" sideWeight="0.47969544" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39901477" sideWeight="0.48260212" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32753405" sideWeight="0.52030456" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43842363" sideWeight="0.48260212" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -746,18 +674,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java</url>
-          <line>255</line>
-          <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/JPAUtil.java</url>
-          <line>25</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/BeanApplication.java</url>
           <line>17</line>
           <properties />
@@ -765,49 +681,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/CustomerBean.java</url>
-          <line>113</line>
+          <line>122</line>
           <properties />
           <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/AddressBean.java</url>
-          <line>216</line>
+          <line>221</line>
           <properties />
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java</url>
-          <line>120</line>
-          <properties />
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java</url>
-          <line>112</line>
+          <line>99</line>
           <properties />
           <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/CustomerBO.java</url>
-          <line>126</line>
+          <line>125</line>
           <properties />
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/CustomerBO.java</url>
-          <line>58</line>
+          <line>57</line>
           <properties />
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/CustomerBO.java</url>
-          <line>95</line>
+          <line>94</line>
           <properties />
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/CustomerBO.java</url>
-          <line>50</line>
+          <line>49</line>
           <properties />
           <option name="timeStamp" value="108" />
         </line-breakpoint>
@@ -819,58 +729,126 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/CustomerBean.java</url>
-          <line>123</line>
+          <line>132</line>
           <properties />
           <option name="timeStamp" value="113" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/AddressBean.java</url>
-          <line>243</line>
+          <line>248</line>
           <properties />
           <option name="timeStamp" value="114" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/ContactBean.java</url>
-          <line>217</line>
+          <line>222</line>
           <properties />
           <option name="timeStamp" value="115" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/AddressBean.java</url>
-          <line>188</line>
+          <line>193</line>
           <properties />
           <option name="timeStamp" value="121" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/ContactBean.java</url>
-          <line>158</line>
+          <line>163</line>
           <properties />
           <option name="timeStamp" value="122" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/CustomerBean.java</url>
-          <line>95</line>
-          <properties />
-          <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java</url>
-          <line>94</line>
-          <properties />
-          <option name="timeStamp" value="124" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/CustomerBean.java</url>
-          <line>134</line>
+          <line>143</line>
           <properties />
           <option name="timeStamp" value="125" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/AddressBean.java</url>
+          <line>132</line>
+          <properties />
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java</url>
+          <line>52</line>
+          <properties />
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java</url>
+          <line>118</line>
+          <properties />
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java</url>
+          <line>169</line>
+          <properties />
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java</url>
+          <line>184</line>
+          <properties />
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java</url>
+          <line>220</line>
+          <properties />
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java</url>
+          <line>152</line>
+          <properties />
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java</url>
+          <line>130</line>
+          <properties />
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java</url>
+          <line>107</line>
+          <properties />
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java</url>
+          <line>32</line>
+          <properties />
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/CustomerBO.java</url>
+          <line>30</line>
+          <properties />
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/primefaces/primefaces/6.2/primefaces-6.2.jar!/org/primefaces/component/datatable/feature/SortFeature.class</url>
+          <line>197</line>
+          <properties />
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/primefaces/primefaces/6.2/primefaces-6.2.jar!/org/primefaces/component/datatable/feature/SortFeature.class</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="126" />
+      <option name="time" value="161" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="MavenRunConfiguration">
         <watch expression="currentCell.getCellTypeEnum()" language="JAVA" />
+        <watch expression="((PersistenceException)erro).cause" custom="javax.persistence.PersistenceException" />
+        <watch expression="Collections.sort(customersList.stream().collect(Collectors.toList()), (o1, o2) -&gt; o1.getName().compareTo(o2.getName()))" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -880,6 +858,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>Collections.sort(customersList.stream().collect(Collectors.toList()), (o1, o2) -&gt; o1.getName().compareTo(o2.getName()))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>currentCell.getCellTypeEnum()</expression-string>
         <language-id>JAVA</language-id>
@@ -920,16 +903,6 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>event.getComponent().getClientId()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>e.getComponent().getParent().getClientId()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
     <expressions id="setValue">
       <expression>
@@ -945,22 +918,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/GenericBO.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar!/javax/persistence/FetchType.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/CustomerBean_teste.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/ProductBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="61" column="5" lean-forward="false" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
@@ -982,24 +939,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/ContactType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/ContactBO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="30" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/customer/customerpersonal.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="38" column="87" lean-forward="false" selection-start-line="38" selection-start-column="87" selection-end-line="38" selection-end-column="87" />
         </state>
       </provider>
     </entry>
@@ -1038,13 +981,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/AddressType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/AddressTypeBO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1056,7 +992,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="17" column="43" lean-forward="false" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1064,14 +999,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="28" column="11" lean-forward="false" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
-          <caret line="140" column="16" lean-forward="false" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1086,15 +1013,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/AddressBO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1102,7 +1020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="40" column="85" lean-forward="true" selection-start-line="40" selection-start-column="85" selection-end-line="40" selection-end-column="85" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1117,23 +1034,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="11" column="45" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Contact.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Address.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="39" column="29" lean-forward="false" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1141,14 +1041,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/JPAUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1165,7 +1057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1173,7 +1064,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1181,25 +1071,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
           <caret line="23" column="95" lean-forward="false" selection-start-line="23" selection-start-column="95" selection-end-line="23" selection-end-column="95" />
-          <folding>
-            <element signature="n#style#0;n#p:commandButton#0;n#p:outputPanel#3;n#h:form#0;n#div#0;n#p:outputPanel#0;n#h:body#0;n#h:html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/template/menu/upmenu.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="13" column="211" lean-forward="false" selection-start-line="13" selection-start-column="211" selection-end-line="13" selection-end-column="211" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/AddressDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1207,7 +1078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1215,7 +1085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="14" column="28" lean-forward="false" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1223,15 +1092,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="58" lean-forward="false" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/CustomerDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="13" column="54" lean-forward="false" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1239,7 +1099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1247,91 +1106,244 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/template/register/contacts.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-421">
-          <caret line="84" column="11" lean-forward="true" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="11" />
-          <folding />
+        <state relative-caret-position="952">
+          <caret line="56" column="62" lean-forward="false" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/CustomerBO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Contact.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#691#692#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/AddressType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/ContactType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/ContactBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="149" column="33" lean-forward="false" selection-start-line="149" selection-start-column="19" selection-end-line="149" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="1615">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding>
+            <element signature="e#7265#7266#0" expanded="false" />
+            <element signature="e#7290#7291#0" expanded="false" />
+            <element signature="e#8114#8115#0" expanded="false" />
+            <element signature="e#8148#8149#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Address.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-726">
+          <caret line="40" column="87" lean-forward="false" selection-start-line="40" selection-start-column="87" selection-end-line="40" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/AddressDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.2.15.Final/hibernate-core-5.2.15.Final.jar!/org/hibernate/internal/SessionImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="672" column="0" lean-forward="false" selection-start-line="672" selection-start-column="0" selection-end-line="672" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/customer/customerpersonal.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="38" column="87" lean-forward="false" selection-start-line="38" selection-start-column="87" selection-end-line="38" selection-end-column="87" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/AddressBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="237" column="37" lean-forward="false" selection-start-line="237" selection-start-column="37" selection-end-line="237" selection-end-column="37" />
+        <state relative-caret-position="498">
+          <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
+          <folding>
+            <element signature="e#7399#7400#0" expanded="false" />
+            <element signature="e#7415#7416#0" expanded="false" />
+            <element signature="e#8177#8178#0" expanded="false" />
+            <element signature="e#8211#8212#0" expanded="false" />
+            <element signature="e#8558#8559#0" expanded="false" />
+            <element signature="e#8589#8590#0" expanded="false" />
+            <element signature="e#8625#8626#0" expanded="false" />
+            <element signature="e#8655#8656#0" expanded="false" />
+            <element signature="e#8874#8875#0" expanded="false" />
+            <element signature="e#8912#8913#0" expanded="false" />
+            <element signature="e#8985#8986#0" expanded="false" />
+            <element signature="e#9039#9040#0" expanded="false" />
+            <element signature="e#9078#9079#0" expanded="false" />
+            <element signature="e#9114#9115#0" expanded="false" />
+            <element signature="e#9170#9171#0" expanded="false" />
+            <element signature="e#9220#9221#0" expanded="false" />
+            <element signature="e#9255#9256#0" expanded="false" />
+            <element signature="e#9285#9286#0" expanded="false" />
+            <element signature="e#9332#9333#0" expanded="false" />
+            <element signature="e#9370#9371#0" expanded="false" />
+            <element signature="e#9409#9410#0" expanded="false" />
+            <element signature="e#9443#9444#0" expanded="false" />
+            <element signature="e#9499#9500#0" expanded="false" />
+            <element signature="e#9545#9546#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/JPAUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/model/Store/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/CustomerBO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="e#654#655#0" expanded="false" />
+            <element signature="e#691#692#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/business/AddressBO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/GenericDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/template/register/addresses.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="629">
           <caret line="37" column="74" lean-forward="false" selection-start-line="37" selection-start-column="74" selection-end-line="37" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/primefaces/primefaces/6.2/primefaces-6.2.jar!/org/primefaces/component/api/UIData.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="813" column="0" lean-forward="false" selection-start-line="813" selection-start-column="0" selection-end-line="813" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/primefaces/primefaces/6.2/primefaces-6.2.jar!/org/primefaces/component/datatable/feature/SortFeature.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#p:dataTable#0;n#div#0;n#p:outputPanel#0;n#ui:composition#0;n#!!top" expanded="true" />
+            <marker date="1521506121607" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1521506121607" expanded="false" signature="166:1181" ph="..." />
+            <marker date="1521506121607" expanded="true" signature="1263:1270" ph="{}" />
+            <marker date="1521506121607" expanded="true" signature="1345:1475" ph="{...}" />
+            <marker date="1521506121607" expanded="true" signature="1539:3053" ph="{...}" />
+            <marker date="1521506121607" expanded="true" signature="3164:5274" ph="{...}" />
+            <marker date="1521506121607" expanded="true" signature="5342:6660" ph="{...}" />
+            <marker date="1521506121607" expanded="true" signature="6727:8679" ph="{...}" />
+            <marker date="1521506121607" expanded="false" signature="8751:8762" ph=" { " />
+            <marker date="1521506121607" expanded="false" signature="8804:8810" ph=" }" />
+            <marker date="1521506121607" expanded="false" signature="8882:8893" ph=" { " />
+            <marker date="1521506121607" expanded="false" signature="8935:8941" ph=" }" />
+            <marker date="1521506121607" expanded="true" signature="8997:9353" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/customer/customer.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/template/menu/upmenu.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="21" column="80" lean-forward="false" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
-          <folding />
+        <state relative-caret-position="221">
+          <caret line="13" column="210" lean-forward="false" selection-start-line="13" selection-start-column="210" selection-end-line="13" selection-end-column="210" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/template/register/contacts.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/util/StoreUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="56" column="62" lean-forward="false" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
+        <state relative-caret-position="187">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#p:column#5;n#p:dataTable#0;n#div#0;n#p:outputPanel#0;n#ui:composition#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/customer/customerfront.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="47" column="146" lean-forward="false" selection-start-line="47" selection-start-column="136" selection-end-line="47" selection-end-column="146" />
+        <state relative-caret-position="272">
+          <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="44" />
           <folding>
-            <element signature="n#style#0;n#p:outputPanel#0;n#p:outputPanel#0;n#f:facet#0;n#p:dataTable#0;n#h:form#0;n#ui:composition#0;n#div#0;n#h:body#0;n#h:html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p:column#6;n#p:dataTable#0;n#h:form#0;n#ui:composition#0;n#div#0;n#h:body#0;n#h:html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p:commandButton#0;n#p:column#6;n#p:dataTable#0;n#h:form#0;n#ui:composition#0;n#div#0;n#h:body#0;n#h:html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p:commandButton#1;n#p:outputPanel#0;n#ui:composition#0;n#div#0;n#h:body#0;n#h:html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p:dialog#1;n#p:outputPanel#0;n#ui:composition#0;n#div#0;n#h:body#0;n#h:html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p:dataTable#0;n#h:form#0;n#ui:composition#0;n#div#0;n#h:body#0;n#h:html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/customer/customer.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/dao/CustomerDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/com/storeadmin/controller/CustomerBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="134" column="15" lean-forward="false" selection-start-line="134" selection-start-column="15" selection-end-line="134" selection-end-column="15" />
-          <folding />
+        <state relative-caret-position="163">
+          <caret line="75" column="54" lean-forward="true" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
+          <folding>
+            <element signature="e#4312#4313#0" expanded="true" />
+            <element signature="e#4343#4344#0" expanded="true" />
+            <element signature="e#5490#5491#0" expanded="true" />
+            <element signature="e#5523#5524#0" expanded="true" />
+            <element signature="e#5571#5572#0" expanded="true" />
+            <element signature="e#5612#5613#0" expanded="true" />
+            <element signature="e#5683#5684#0" expanded="true" />
+            <element signature="e#5743#5744#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

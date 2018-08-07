@@ -23,6 +23,7 @@ public class Contact implements Serializable {
     @OneToOne
     @JoinColumn(name="CTT_ID")
     private ContactType type;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CTM_ID")
     private Customer customer;

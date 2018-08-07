@@ -147,7 +147,12 @@ public class ContactBean implements Serializable, Bean {
         wppContact  = false;
         contactList.add(contact);
         customer.setContacts(contactList);
-        addMsgInfo(MSG_ID_CONTACT,"Contato adicionado com sucesso!");
+        try {
+            contactBO.save(contact);
+            addMsgInfo(MSG_ID_CONTACT,"Contato adicionado com sucesso!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         contact = new Contact();
     }

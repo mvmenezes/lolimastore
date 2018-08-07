@@ -35,10 +35,10 @@ public class Address implements Serializable {
     private String zipcode;
     @Column(name="ADD_COUNTRY")
     private String country;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "ADT_ID")
     private AddressType type;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     @JoinColumn(name = "CTM_ID")
     private Customer customer;
     @ManyToOne(fetch=FetchType.LAZY)

@@ -28,7 +28,6 @@ public class CustomerBO extends BOModel{
     }
     public void save(Customer customer)throws Exception
     {
-
         if(customer.getCode() != null)
             customer.setCode(customer.getCode().toUpperCase());
         cDAO.save(customer);
@@ -128,5 +127,10 @@ public class CustomerBO extends BOModel{
             }
         }
         return results;
+    }
+
+    public Customer findById(long id) {
+
+        return cDAO.findByID(id);
     }
 }

@@ -12,6 +12,7 @@ br\com\storeadmin\model\Store\ProductAttribute.class
 br\com\storeadmin\model\Store\Responsable.class
 br\com\storeadmin\model\EnumModel\EStoreAttribute.class
 br\com\storeadmin\model\Store\Factory.class
+br\com\storeadmin\util\StoreUtil.class
 br\com\storeadmin\model\Store\ProductType.class
 br\com\storeadmin\WS\SearchCEPWS.class
 br\com\storeadmin\model\Master\Store.class
